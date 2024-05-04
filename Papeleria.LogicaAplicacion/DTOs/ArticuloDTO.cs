@@ -13,11 +13,11 @@ namespace Papeleria.LogicaAplicacion.DTOs
 
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public int codProveedor { get; set; }
+        public string codProveedor { get; set; }
         public double precioActual { get; set; }
         public int id { get; set; }
         public ArticuloDTO() { }
-        public ArticuloDTO(string nombre, string descripcion, int codProveedor, double precioActual)
+        public ArticuloDTO(string nombre, string descripcion, string codProveedor, double precioActual)
         {
             this.nombre = nombre;
             this.descripcion = descripcion;
