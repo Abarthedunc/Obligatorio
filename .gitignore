@@ -7,3 +7,5 @@
 /.vs
 /Papeleria.AccesoDatos/bin
 /Papeleria.LogicaNegocios/bin
+/Papeleria.LogicaAplicacion/bin
+/Papeleria.Web/bin
