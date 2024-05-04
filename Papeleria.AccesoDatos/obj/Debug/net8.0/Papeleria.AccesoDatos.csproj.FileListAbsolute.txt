@@ -1,0 +1,15 @@
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\bin\Debug\net8.0\Papeleria.AccesoDatos.deps.json
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\bin\Debug\net8.0\Papeleria.AccesoDatos.dll
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\bin\Debug\net8.0\Papeleria.AccesoDatos.pdb
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.AssemblyInfoInputs.cache
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.AssemblyInfo.cs
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.dll
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\refint\Papeleria.AccesoDatos.dll
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.pdb
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\ref\Papeleria.AccesoDatos.dll
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleria.AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\bin\Debug\net8.0\Papeleria.LogicaNegocios.dll
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\bin\Debug\net8.0\Papeleria.LogicaNegocios.pdb
+C:\Users\ClaraSchellembergAbe\source\repos\Obligatorio1P3Final\Papeleria.AccesoDatos\obj\Debug\net8.0\Papeleri.2C0B9302.Up2Date
