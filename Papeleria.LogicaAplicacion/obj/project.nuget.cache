@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GCpq6ceEdb36UYn0cpoePO27TvBx722KF0wr1SSvB6cI69u5je0RLNof+7w40xp9lLdFyo1vdLKMOEFqU9WHeg==",
+  "dgSpecHash": "gQ+W7Be6ZlmHDEqjywdOTG4kmZDB4pKAWKKMb24XD9ajWK1rE0hNaxsko0Kj2Cv4Y1+Nd+cAhEOE0ryrsCCSAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\source\\repos\\Obligatorio1P3Final\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
+  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3xF2M8v4zN5GZSWYUjLbMnHSKMilFTxMfUJN5KFcBneyupZg8ik2yBhoTzlpqo/Cysm6F5jmkUmQ8zr9bKRDzg==",
+  "dgSpecHash": "OH5hPWUoyGRk0BA4NWkXHVNcRLHp3uw971aMSxf4zXKOOQP6gZ0x3NQTtFLx9ru1BXfNKQpYnPIzuolcBkQFIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\source\\repos\\Obligatorio1P3Final\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
+  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

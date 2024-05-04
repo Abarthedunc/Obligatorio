@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WdYF964ya4pabrLAxaLuw7iRyfWE/Z72FXdilGcydz9aAEOeOQbq4XYDwka/Xsgh9TKticEBhjdRmALyZyNxNQ==",
+  "dgSpecHash": "xr9cr9p41PVu9GyhIZ8sOBSz77uaq1UOKnUQNPecQGI+uCLLC0uJ2aE77HdS/+sXuO8dYK29hvBbjQjMXtH+eA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\source\\repos\\Obligatorio1P3Final\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
+  "projectFilePath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
