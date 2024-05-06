@@ -12,15 +12,17 @@ namespace Papeleria.LogicaNegocio.Entidades
         public int id { get; set; }
         public DateTime fechaPedido { get; set; }
         public Cliente cliente { get; set; }
-        public Linea lineas { get; set; }
-        public double monto { get; set; }
-        public Pedido(DateTime fechaPedido, Cliente cliente, Linea lineas)
+        public List<Linea> _lineas { get; set; }
+        public double precioTotal { get; set; }
+        public double descuento {  get; set; }
+        public Pedido() { }
+
+        public Pedido(DateTime fechaPedido, Cliente cliente)
         {
+            //todo: datetime.now
             this.fechaPedido = fechaPedido;
             this.cliente = cliente;
-            this.lineas = lineas;
         }
-        public Pedido() { }
 
         public bool EsValido()
         {

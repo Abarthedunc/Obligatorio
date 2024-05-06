@@ -10,7 +10,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     public class PedidoComun : Pedido, IValidable<PedidoComun>
     {
         public PedidoComun() { }
-        public PedidoComun(DateTime fechaPedido, Cliente cliente, Linea lineas) : base(fechaPedido, cliente, lineas)
+        public PedidoComun(DateTime fechaPedido, Cliente cliente, Linea lineas) : base(fechaPedido, cliente)
         {
         }
 
