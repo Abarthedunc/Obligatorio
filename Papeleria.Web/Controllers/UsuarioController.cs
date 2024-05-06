@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Papeleria.BusinessLogic.ValueObjects;
 using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
 using Papeleria.LogicaAplicacion.InterfacesCU.Usuarios;
 
 namespace Papeleria.Web.Controllers
@@ -17,6 +18,7 @@ namespace Papeleria.Web.Controllers
         private IUpdateUsuarioCU _updateUsuarioCU;
         private ILoginUsuarioCU _loginUsuarioCU;
         private IDetailsUsuarioCU _detailsUsuarioCU;
+
         
 
         public UsuarioController(IGetUsuariosAscendenteCU ordenarAscendenteCU, ICrearUsuarioCU crearUsuarioCU, IDeleteUsuarioCU deleteUsuarioCU, IRecibeIdDevuelveUsuarioCU recibeIdDevuelveUsuarioCU, IUpdateUsuarioCU updateUsuarioCU, ILoginUsuarioCU loginUsuarioCU, IDetailsUsuarioCU detailsUsuarioCU)

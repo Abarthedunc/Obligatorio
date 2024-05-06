@@ -85,5 +85,14 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             Contains(criterio) || c.nombreCompleto.apellido.Contains(criterio)).ToList();
             return clienteEncontrado;
         }
+
+        //Dado un monto, los clientes que hayan realizado pedidos cuyo total supere el monto dado.
+        IEnumerable<Cliente> IRepositorioCliente.ClientesCuyoPedidoSupereMonto(double valor) 
+        {
+            List<Pedido> _pedidosAux = new List<Pedido>();
+            _pedidosAux=_context.Pedidos.Where(p => p.monto > valor).ToList();
+            var clienteAux= _pedidosAux.Select(c => c.cliente).ToList();
+            return clienteAux;
+        }
     }
 }

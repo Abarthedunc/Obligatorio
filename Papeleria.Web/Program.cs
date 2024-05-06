@@ -9,6 +9,7 @@ using Papeleria.LogicaAplicacion.InterfacesCU.Pedidos;
 using Papeleria.LogicaAplicacion.InterfacesCU.Usuarios;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using Papeleria.LogicaAplicacion.InterfacesUC;
+using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,6 +36,7 @@ builder.Services.AddScoped<ICrearArticuloCU, CrearArticuloCU>();
 builder.Services.AddScoped<ICrearClienteCU, CrearClienteCU>();
 builder.Services.AddScoped<ICrearPedidoComunUC, CrearPedidoComunUC>();
 builder.Services.AddScoped<IListarUsuariosUC, ObtenerUsuariosUC>();
+builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();
 
 
 
