@@ -10,17 +10,22 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaAplicacion.CasosDeUso.Pedido
 {
-    public class CrearPedidoComunUC : ICrearPedidoComunUC
+    public class CrearPedidoCU : ICrearPedidoCU
     {
-        private IRepositorioPedidoComun _pedidos;
-        public CrearPedidoComunUC(IRepositorioPedidoComun pedidos)
+        private IRepositorioPedido _pedidos;
+        public CrearPedidoCU(IRepositorioPedido pedidos)
         {
             _pedidos = pedidos;
         }
 
-         void ICrearPedidoComunUC.CrearPedidoComunUC(PedidoComunDTO pedidoACrear)
+        public void CrearPedidoUC(PedidoComunDTO pedidoACrear)
         {
-                _pedidos.Add(PedidoComunDtoMapper.FromDto(pedidoACrear));
+            throw new NotImplementedException();
+        }
+
+        void ICrearPedidoCU.CrearPedidoUC(PedidoComunDTO pedidoACrear)
+        {
+            _pedidos.Add(PedidoComunDtoMapper.FromDto(pedidoACrear));
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Papeleria.LogicaNegocio.Entidades
             this.precioUnitario = precioUnitario;
         }
 
-        public void EsValido()
+        public bool EsValido()
         {
             throw new NotImplementedException();
         }

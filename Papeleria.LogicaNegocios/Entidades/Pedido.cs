@@ -22,7 +22,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         }
         public Pedido() { }
 
-        public void EsValido()
+        public bool EsValido()
         {
             throw new NotImplementedException();
         }
