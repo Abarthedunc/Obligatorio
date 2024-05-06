@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Operations;
+using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
 using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
 
 namespace Papeleria.Web.Controllers
@@ -8,6 +11,7 @@ namespace Papeleria.Web.Controllers
 
     public class ClienteController : Controller
     {
+        private ICrearClienteCU _crearClienteCU;
         private IClientesCuyoPedidoSupereMontoCU _clientesCuyoPedidoSupereMontoCU;
         private IGetClientesBusquedaCU _clientesBusquedaCU;
         public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU) 
@@ -36,10 +40,11 @@ namespace Papeleria.Web.Controllers
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ClienteDTO clienteDTO)
         {
             try
             {
+                _crearClienteCU.CrearCliente(clienteDTO);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -89,6 +94,16 @@ namespace Papeleria.Web.Controllers
                 return View();
             }
         }
+        public ActionResult ClientesCuyoPedidoSupereMonto()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClientesCuyoPedidoSupereMonto(double monto)
+        {
+            return View(this._clientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(monto));
+        }
         public ActionResult BuscarEnClientes()
         {
             return View(); 
@@ -99,15 +114,6 @@ namespace Papeleria.Web.Controllers
         { 
             return View(this._clientesBusquedaCU.BuscarClientesPorNombre(criterio));
         }
-        public ActionResult ClientesCuyoPedidoSupereMonto()
-        {
-            return View(); 
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ClientesCuyoPedidoSupereMonto(double monto) 
-        {
-            return View(this._clientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(monto));
-        }
+        
     }
 }
