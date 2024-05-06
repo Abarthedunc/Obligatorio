@@ -9,11 +9,13 @@ namespace Papeleria.Web.Controllers
     public class ClienteController : Controller
     {
         private IClientesCuyoPedidoSupereMontoCU _clientesCuyoPedidoSupereMontoCU;
+        private IGetClientesBusquedaCU _clientesBusquedaCU;
         public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU) 
         {
             _clientesCuyoPedidoSupereMontoCU = clientesCuyoPedidoSupereMontoCU;
         }  
         // GET: ClienteController
+        //todo: el index tiene que ser con clienteDTO
         public ActionResult Index()
         {
             return View();
@@ -86,6 +88,16 @@ namespace Papeleria.Web.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult BuscarEnClientes()
+        {
+            return View(); 
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BuscarEnClientes(string criterio) 
+        { 
+            return View(this._clientesBusquedaCU.BuscarClientesPorNombre(criterio));
         }
         public ActionResult ClientesCuyoPedidoSupereMonto()
         {
