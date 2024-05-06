@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
 
 namespace Papeleria.Web.Controllers
 {
+    
+
     public class ClienteController : Controller
     {
+        private IClientesCuyoPedidoSupereMontoCU _clientesCuyoPedidoSupereMontoCU;
+        public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU) 
+        {
+            _clientesCuyoPedidoSupereMontoCU = clientesCuyoPedidoSupereMontoCU;
+        }  
         // GET: ClienteController
         public ActionResult Index()
         {
@@ -78,6 +86,16 @@ namespace Papeleria.Web.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult ClientesCuyoPedidoSupereMonto()
+        {
+            return View(); 
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClientesCuyoPedidoSupereMonto(double monto) 
+        {
+            return View(this._clientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(monto));
         }
     }
 }

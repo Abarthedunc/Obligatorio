@@ -13,7 +13,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         public DateTime fechaPedido { get; set; }
         public Cliente cliente { get; set; }
         public Linea lineas { get; set; }
-        public bool estaAnulado { get; set; }
+        public double monto { get; set; }
         public Pedido(DateTime fechaPedido, Cliente cliente, Linea lineas)
         {
             this.fechaPedido = fechaPedido;

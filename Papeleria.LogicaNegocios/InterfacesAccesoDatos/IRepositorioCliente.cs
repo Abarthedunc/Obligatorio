@@ -9,5 +9,7 @@ namespace Papeleria.LogicaNegocio.InterfacesAccesoDatos {
     public interface IRepositorioCliente : IRepositorio<Cliente>
     {
         IEnumerable<Cliente> BuscarClientesPorNombre(string criterio);
+        IEnumerable<Cliente> ClientesCuyoPedidoSupereMonto(double monto);
+
     }
 }
