@@ -22,7 +22,7 @@ namespace Papeleria.LogicaNegocio.ValueObjects
             this.ciudad = ciudad;
         }
 
-        public void EsValido()
+        public bool EsValido()
         {
             throw new NotImplementedException();
         }

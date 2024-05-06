@@ -33,9 +33,10 @@ namespace Papeleria.LogicaNegocio.Entidades
             nombreCompleto = new NombreCompletoClientes(nombre, apellido);
         }
 
-        public void EsValido()
+        public bool EsValido()
         {
-            ValidarRUT();
+            if (ValidarRUT()) return true;
+            return false;
         }
 
         public bool ValidarRUT()

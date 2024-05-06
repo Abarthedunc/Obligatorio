@@ -12,6 +12,6 @@ namespace Papeleria.LogicaNegocio.InterfacesEntidades
         /// Este método valida que la entidad sea válida. Si no lo es, lanza una excepción
         /// </summary>
         /// <param name="entidad">La entidad a validar. Ya debe incluir las properties asignadas, y lo solemos invocar en el constructor</param>
-        void EsValido();
+        bool EsValido();
     }
 }

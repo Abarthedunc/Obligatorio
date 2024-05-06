@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaAplicacion.InterfacesCU.Pedidos
 {
-    public interface ICrearPedidoComunUC
+    public interface ICrearPedidoCU
     {
-        public void CrearPedidoComunUC(PedidoComunDTO pedidoACrear);
+        public void CrearPedidoUC(PedidoComunDTO pedidoACrear);
     }
 }

@@ -29,10 +29,19 @@ namespace Papeleria.LogicaNegocio.Entidades
             this.precioActual = precioActual;
         }
 
-        public void EsValido()
+        public bool EsValido()
         {
-            ValidarNombre();
-            ValidarCodProveedor();
+            if(ValidarNombre()&&
+            ValidarCodProveedor())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+            
         }
         public bool ValidarNombre()
         {

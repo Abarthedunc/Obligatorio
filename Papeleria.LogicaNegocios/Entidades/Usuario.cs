@@ -21,10 +21,15 @@ namespace Papeleria.LogicaNegocio.Entidades
         public bool esAdmin { get; set; }
         public Usuario() { }
 
-        public void EsValido()
+        public bool EsValido()
         {
-            ValidarMail();
-            ValidarNombreCompleto();
+            if(ValidarMail()&&
+            ValidarNombreCompleto())
+            {
+                return true;
+            }
+            return false;
+            
         }
         public bool ValidarMail()
         {
@@ -43,7 +48,7 @@ namespace Papeleria.LogicaNegocio.Entidades
             //el nombre y el apellido solamente pueden contener caracteres
             //alfabéticos, espacio, apóstrofe o guión del medio.Los caracteres no alfabéticos no pueden estar ubicados al
             //principio ni al final de la cadena.
-            for(int i= 0; i<= parteNombre.Length; i++)
+            for(int i= 0; i< parteNombre.Length; i++)
             {
                 char c= parteNombre[i];
                 if (!ValidarCaracterNombre(c)) return false;
@@ -100,6 +105,8 @@ namespace Papeleria.LogicaNegocio.Entidades
             }
             return tieneMayuscula && tieneMinuscula && tieneDigito && tienePuntuacion;
         }
+
+        
 
 
         /*public Usuario(string Email, string PasswordNoEncriptada,string PasswordEncriptada, NombreCompleto nombreEntero)
