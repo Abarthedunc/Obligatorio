@@ -23,7 +23,7 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Usuario
         public void DeleteUsuario(UsuarioDTO dtoAEliminar)
         {
             Papeleria.LogicaNegocio.Entidades.Usuario u = _repositorioUsuario.FindByID(dtoAEliminar.Id);
-            _repositorioUsuario.Remove(u.Id);
+            _repositorioUsuario.Remove(u.id);
         }
     }
 }

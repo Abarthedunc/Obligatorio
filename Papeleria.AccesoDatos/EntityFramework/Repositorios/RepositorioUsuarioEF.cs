@@ -47,14 +47,14 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 
         public Usuario FindByID(int id)
         {
-            return _context.Usuarios.Where(usuario => usuario.Id == id).FirstOrDefault();
+            return _context.Usuarios.Where(usuario => usuario.id == id).FirstOrDefault();
         }
 
         public bool Remove(int id)
         {
             try
             {
-                Usuario aRemover = _context.Usuarios.Where(usuario => usuario.Id == id)
+                Usuario aRemover = _context.Usuarios.Where(usuario => usuario.id == id)
                     .FirstOrDefault();
                 if (aRemover == null)
                 {

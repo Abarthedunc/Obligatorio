@@ -14,7 +14,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     [Index (nameof(email), IsUnique =  true)]
     public class Usuario : IValidable<Usuario>
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public NombreCompleto nombreCompleto { get; set; }

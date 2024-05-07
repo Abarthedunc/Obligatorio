@@ -22,7 +22,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
             //Usuario usuario = new Usuario(dto.email, dto.password, passEncriptada,new NombreCompleto(dto.nombre, dto.apellido));
             return new Usuario
             {
-                Id = dto.Id,
+                id = dto.Id,
                 email = dto.email,
                 nombreCompleto = new NombreCompleto(dto.nombre, dto.apellido),
                 password = dto.password,

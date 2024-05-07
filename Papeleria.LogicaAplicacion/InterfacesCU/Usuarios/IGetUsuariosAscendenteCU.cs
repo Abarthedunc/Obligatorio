@@ -1,4 +1,5 @@
-﻿using Papeleria.LogicaNegocio.Entidades;
+﻿using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaNegocio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Usuarios
 {
     public interface IGetUsuariosAscendenteCU
     {
-        public IEnumerable<Usuario> GetUsuariosOrdenados();
+        public List<UsuarioIndexDTO> GetUsuariosOrdenados();
     }
 }
