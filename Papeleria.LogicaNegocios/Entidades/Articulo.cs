@@ -15,18 +15,20 @@ namespace Papeleria.LogicaNegocio.Entidades
         public string descripcion { get; set; }
         public string codProveedor { get; set; }
         public double precioActual { get; set; }
+        public int stock {  get; set; }
         public int id { get; set; }
         public Articulo() { }
         public Articulo(IRepositorioArticulo repositorioArticulo)
         {
             _repoitorioArticulo = repositorioArticulo;
         }
-        public Articulo(string nombre, string descripcion, string codProveedor, double precioActual)
+        public Articulo(string nombre, string descripcion, string codProveedor, double precioActual, int stock)
         {
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.codProveedor = codProveedor;
             this.precioActual = precioActual;
+            this.stock = stock;
         }
 
         public bool EsValido()
@@ -55,5 +57,6 @@ namespace Papeleria.LogicaNegocio.Entidades
             
             return true;
         }
+        //todo:stock mayor que 0
     }
 }

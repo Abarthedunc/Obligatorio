@@ -21,7 +21,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
             {
                 throw new ArticuloNoValidoException();
             }
-            return new Articulo(dto.nombre, dto.descripcion, dto.codProveedor, dto.precioActual);
+            return new Articulo(dto.nombre, dto.descripcion, dto.codProveedor, dto.precioActual, dto.stock);
         }
     }
 }
