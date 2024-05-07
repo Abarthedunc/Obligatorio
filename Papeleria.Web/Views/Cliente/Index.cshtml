@@ -12,19 +12,31 @@
 <table class="table">
     <thead>
         <tr>
+            
+
             <th>
                 @Html.DisplayNameFor(model => model.razonSocial)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.rut)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adress.ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreCompleto.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreCompleto.apellido)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-
+        @if(Model!=null){
 @foreach (var item in Model) {
         <tr>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.razonSocial)
             </td>
@@ -32,11 +44,20 @@
                 @Html.DisplayFor(modelItem => item.rut)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.adress.ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCompleto.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCompleto.apellido)
+             </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+}}
     </tbody>
 </table>

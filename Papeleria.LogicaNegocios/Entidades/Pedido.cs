@@ -1,4 +1,5 @@
 ﻿using Papeleria.LogicaNegocio.InterfacesEntidades;
+using Papeleria.LogicaNegocios.Enumerados;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         public List<Linea> _lineas { get; set; }
         public double precioTotal { get; set; }
         public double descuento {  get; set; }
+        public EstadoPedido estadoPedido { get; set; }
         public Pedido() { }
 
         public Pedido(DateTime fechaPedido, Cliente cliente)
@@ -22,6 +24,7 @@ namespace Papeleria.LogicaNegocio.Entidades
             //todo: datetime.now
             this.fechaPedido = fechaPedido;
             this.cliente = cliente;
+            this.estadoPedido = EstadoPedido.Pendiente;
         }
 
         public bool EsValido()

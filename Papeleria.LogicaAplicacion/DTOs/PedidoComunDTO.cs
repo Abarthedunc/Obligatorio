@@ -23,7 +23,6 @@ namespace Papeleria.LogicaAplicacion.DTOs
             {
                 id = pedidoComun.id;
                 cliente = pedidoComun.cliente;
-                lineas = pedidoComun.lineas;
                 fechaPedido = pedidoComun.fechaPedido;
             }
         }

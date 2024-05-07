@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaAplicacion.CasosDeUso.Cliente
 {
-    public class BuscarClientesPorNombreCU : IGetClientesBusquedaCU
+    public class BuscarEnClientesCU : IBuscarEnClientesCU
     {
         private IRepositorioCliente _repositorioClientes;
 
-        public BuscarClientesPorNombreCU(IRepositorioCliente repositorioClientes)
+        public BuscarEnClientesCU(IRepositorioCliente repositorioClientes)
         {
             _repositorioClientes = repositorioClientes;
         }
@@ -21,9 +21,9 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Cliente
         
         
        
-        IEnumerable<LogicaNegocio.Entidades.Cliente> IGetClientesBusquedaCU.BuscarClientesPorNombre(string criterio)
+        IEnumerable<LogicaNegocio.Entidades.Cliente> IBuscarEnClientesCU.BuscarEnClientes(string criterio)
         {
-            return _repositorioClientes.BuscarClientesPorNombre(criterio);
+            return _repositorioClientes.BuscarEnClientes(criterio);
         }
     }
 }

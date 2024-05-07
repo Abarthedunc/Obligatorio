@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaAplicacion.InterfacesCU.Clientes
 {
-    public interface IGetClientesBusquedaCU
+    public interface IBuscarEnClientesCU
     {
-        public IEnumerable<Cliente> BuscarClientesPorNombre(string criterio);
+        public IEnumerable<Cliente> BuscarEnClientes(string criterio);
     }
 }

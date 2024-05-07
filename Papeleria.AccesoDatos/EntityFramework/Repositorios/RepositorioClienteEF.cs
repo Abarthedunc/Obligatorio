@@ -33,6 +33,11 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             }
         }
 
+        public IEnumerable<Cliente> BuscarClientesPorNombre(string criterio)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Cliente> FindAll()
         {
             return _context.Clientes;
@@ -79,7 +84,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             }
         }
         
-        IEnumerable<Cliente> IRepositorioCliente.BuscarClientesPorNombre(string criterio)
+        IEnumerable<Cliente> IRepositorioCliente.BuscarEnClientes(string criterio)
         {
             var clienteEncontrado = _context.Clientes.Where(c => c.nombreCompleto.nombre.
             Contains(criterio) || c.nombreCompleto.apellido.Contains(criterio)).ToList();
@@ -90,7 +95,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         IEnumerable<Cliente> IRepositorioCliente.ClientesCuyoPedidoSupereMonto(double valor) 
         {
             List<Pedido> _pedidosAux = new List<Pedido>();
-            _pedidosAux=_context.Pedidos.Where(p => p.monto > valor).ToList();
+            _pedidosAux=_context.Pedidos.Where(p => p.precioTotal > valor).ToList();
             var clienteAux= _pedidosAux.Select(c => c.cliente).ToList();
             return clienteAux;
         }

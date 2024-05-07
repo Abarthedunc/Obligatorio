@@ -22,7 +22,6 @@ namespace Papeleria.LogicaAplicacion.DTOs
             {
                 id = pedidoExpress.id;
                 cliente = pedidoExpress.cliente;
-                lineas = pedidoExpress.lineas;
                 fechaPedido = pedidoExpress.fechaPedido;
             }
         }

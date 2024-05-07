@@ -22,7 +22,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
             {
                 throw new ClienteNoValidoException();
             }
-            return new Cliente(dto.razonSocial, dto.rut, dto.calle, dto.numeroPuerta, dto.ciudad, dto.nombre, dto.apellido);
+            return new Cliente(dto.razonSocial, dto.rut, dto.calle, dto.numeroPuerta, dto.ciudad, dto.distancia, dto.nombre, dto.apellido);
         }
     }
 }

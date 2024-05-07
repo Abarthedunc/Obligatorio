@@ -13,7 +13,7 @@ namespace Papeleria.Web.Controllers
     {
         private ICrearClienteCU _crearClienteCU;
         private IClientesCuyoPedidoSupereMontoCU _clientesCuyoPedidoSupereMontoCU;
-        private IGetClientesBusquedaCU _clientesBusquedaCU;
+        private IBuscarEnClientesCU _buscarEnClientesCU;
         public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU) 
         {
             _clientesCuyoPedidoSupereMontoCU = clientesCuyoPedidoSupereMontoCU;
@@ -112,7 +112,7 @@ namespace Papeleria.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult BuscarEnClientes(string criterio) 
         { 
-            return View(this._clientesBusquedaCU.BuscarClientesPorNombre(criterio));
+            return View(this._buscarEnClientesCU.BuscarEnClientes(criterio));
         }
         
     }

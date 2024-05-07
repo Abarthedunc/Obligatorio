@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Papeleria.LogicaNegocio.InterfacesAccesoDatos { 
     public interface IRepositorioCliente : IRepositorio<Cliente>
     {
-        IEnumerable<Cliente> BuscarClientesPorNombre(string criterio);
+        IEnumerable<Cliente> BuscarEnClientes(string criterio);
         IEnumerable<Cliente> ClientesCuyoPedidoSupereMonto(double monto);
 
     }

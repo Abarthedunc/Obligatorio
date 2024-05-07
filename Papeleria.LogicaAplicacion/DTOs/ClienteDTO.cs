@@ -15,16 +15,18 @@ namespace Papeleria.LogicaAplicacion.DTOs
         public string calle { get; set; }
         public string numeroPuerta { get; set; }
         public string ciudad { get; set; }
+        public double distancia { get; set; }
         public string nombre { get; set; }
         public string apellido {  get; set; }
         public ClienteDTO() { }
-        public ClienteDTO(string razonSocial, string rut, string calle, string numeroPuerta, string ciudad, string nombre, string apellido)
+        public ClienteDTO(string razonSocial, string rut, string calle, string numeroPuerta, string ciudad, double distancia, string nombre, string apellido)
         {
             this.razonSocial = razonSocial;
             this.rut = rut;
             this.calle = calle;
             this.numeroPuerta = numeroPuerta;
             this.ciudad = ciudad;
+            this.distancia = distancia;
             this.nombre = nombre;
             this.apellido = apellido;
         }
@@ -37,6 +39,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
                 calle = cliente.adress.calle;
                 numeroPuerta = cliente.adress.numeroPuerta;
                 ciudad = cliente.adress.ciudad;
+                distancia = cliente.distancia;
                 nombre = cliente.nombreCompleto.nombre;
                 apellido = cliente.nombreCompleto.apellido;
             }

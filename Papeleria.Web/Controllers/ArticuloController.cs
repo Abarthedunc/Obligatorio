@@ -8,10 +8,13 @@ namespace Papeleria.Web.Controllers
     public class ArticuloController : Controller
     {
         private ICrearArticuloCU _crearArticuloCU;
+        private IArticulosOrdenadosAlfabeticamenteCU _articulosOrdenadosCU;
+    
 
-        public ArticuloController(ICrearArticuloCU crearArticuloCU)
+        public ArticuloController(ICrearArticuloCU crearArticuloCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenadosCU)
         {
             _crearArticuloCU = crearArticuloCU;
+            _articulosOrdenadosCU = articulosOrdenadosCU;   
         }
 
 

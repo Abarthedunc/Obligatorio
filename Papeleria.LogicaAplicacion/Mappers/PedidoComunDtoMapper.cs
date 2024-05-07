@@ -18,7 +18,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
         {
             if(dto!= null)
             {
-                PedidoComun nuevoPedido = new PedidoComun(dto.fechaPedido, dto.cliente, dto.lineas);
+                PedidoComun nuevoPedido = new PedidoComun(dto.fechaPedido, dto.cliente);
                 return nuevoPedido;
             }
             return null;

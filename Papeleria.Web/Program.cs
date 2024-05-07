@@ -30,12 +30,17 @@ builder.Services.AddScoped<IDeleteUsuarioCU, DeleteUsuarioCU>();
 builder.Services.AddScoped<IUpdateUsuarioCU, UpdateUsuarioCU>();
 builder.Services.AddScoped<ILoginUsuarioCU, UsuarioLoginCU>();
 builder.Services.AddScoped<IDetailsUsuarioCU, DetailsUsuarioCU>();
-builder.Services.AddScoped<ICrearArticuloCU, CrearArticuloCU>();
-builder.Services.AddScoped<ICrearClienteCU, CrearClienteCU>();
-builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
 builder.Services.AddScoped<IListarUsuariosUC, ObtenerUsuariosUC>();
-builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();
 
+
+builder.Services.AddScoped<ICrearArticuloCU, CrearArticuloCU>();
+builder.Services.AddScoped<IArticulosOrdenadosAlfabeticamenteCU, ArticulosOrdenadosAlfabeticamenteCU>();
+
+builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
+
+
+builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();
+builder.Services.AddScoped<IBuscarEnClientesCU, BuscarEnClientesCU>();
 
 
 

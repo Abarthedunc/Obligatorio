@@ -10,7 +10,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     public class PedidoExpress : Pedido, IValidable<PedidoExpress>
     {
         public PedidoExpress() { }
-        public PedidoExpress(DateTime fechaPedido, Cliente cliente, Linea lineas) : base(fechaPedido, cliente, lineas)
+        public PedidoExpress(DateTime fechaPedido, Cliente cliente, Linea lineas) : base(fechaPedido, cliente)
         {
         }
 
