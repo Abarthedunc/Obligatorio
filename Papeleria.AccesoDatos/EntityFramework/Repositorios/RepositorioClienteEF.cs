@@ -35,7 +35,8 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 
         public IEnumerable<Cliente> BuscarClientesPorNombre(string criterio)
         {
-            throw new NotImplementedException();
+            //return _context.Clientes.Where(c => c.nombreCompleto.nombre == criterio).FirstOrDefault().ToList();
+            return null;
         }
 
         public IEnumerable<Cliente> FindAll()
