@@ -9,6 +9,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Usuarios
 {
     public interface IDeleteUsuarioCU 
     {
-        public void DeleteUsuario(UsuarioDTO usuarioDTOAEliminar);
+        public void DeleteUsuario(int id);
     }
 }

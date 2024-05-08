@@ -20,9 +20,9 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Usuario
         }
        
         
-        public void DeleteUsuario(UsuarioDTO dtoAEliminar)
+        public void DeleteUsuario(int id)
         {
-            Papeleria.LogicaNegocio.Entidades.Usuario u = _repositorioUsuario.FindByID(dtoAEliminar.Id);
+            Papeleria.LogicaNegocio.Entidades.Usuario u = _repositorioUsuario.FindByID(id);
             _repositorioUsuario.Remove(u.id);
         }
     }

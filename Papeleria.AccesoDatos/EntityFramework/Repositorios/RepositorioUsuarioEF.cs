@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Papeleria.LogicaNegocio.Exceptions.Usuario;
 using Papeleria.LogicaNegocio.Exceptions.Cliente;
+using Microsoft.EntityFrameworkCore;
 
 namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 {
@@ -47,7 +48,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 
         public Usuario FindByID(int id)
         {
-            return _context.Usuarios.Where(usuario => usuario.id == id).FirstOrDefault();
+            return _context.Usuarios.Where(usuario => usuario.id == id).AsNoTracking().FirstOrDefault();
         }
 
         public bool Remove(int id)

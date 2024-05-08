@@ -150,8 +150,7 @@ namespace Papeleria.Web.Controllers
         {
             try
             {
-                UsuarioDTO u = _recibeIdDevuelveUsuarioCU.RecibeIdDevuelveUsuario(id);
-                this._deleteUsuarioCU.DeleteUsuario(u);
+                this._deleteUsuarioCU.DeleteUsuario(id);
                 return RedirectToAction(nameof(Index));
             }
             catch

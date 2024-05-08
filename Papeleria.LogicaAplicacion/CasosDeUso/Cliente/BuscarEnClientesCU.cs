@@ -18,10 +18,8 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Cliente
             _repositorioClientes = repositorioClientes;
         }
         
-        
-        
        
-        IEnumerable<LogicaNegocio.Entidades.Cliente> IBuscarEnClientesCU.BuscarEnClientes(string criterio)
+         IEnumerable<LogicaNegocio.Entidades.Cliente> IBuscarEnClientesCU.BuscarEnClientes(string criterio)
         {
             return _repositorioClientes.BuscarEnClientes(criterio);
         }

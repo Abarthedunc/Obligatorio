@@ -13,6 +13,6 @@ namespace Papeleria.BusinessLogic.ValueObjects
         public string nombre { get; set; }
         public string apellido { get; set; }
         public NombreCompleto() { }
-        public NombreCompleto(string nombre, string apellido) { this.nombre = nombre;}
+        public NombreCompleto(string nombre, string apellido) { this.nombre = nombre; this.apellido = apellido; }
     }
 }
