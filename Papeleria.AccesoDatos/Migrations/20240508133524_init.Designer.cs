@@ -12,8 +12,8 @@ using Papeleria.AccesoDatos.EntityFramework;
 namespace Papeleria.AccesoDatos.Migrations
 {
     [DbContext(typeof(PapeleriaContext))]
-    [Migration("20240508112726_inicio")]
-    partial class inicio
+    [Migration("20240508133524_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
