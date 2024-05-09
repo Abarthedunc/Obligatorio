@@ -22,6 +22,8 @@ builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuarioEF>();
 builder.Services.AddScoped<IRepositorioArticulo, RepositorioArticuloEF>();
 builder.Services.AddScoped<IRepositorioCliente, RepositorioClienteEF>();
 builder.Services.AddScoped<IRepositorioPedido, RepositorioPedidoEF>();
+
+
 // Caso de uso
 builder.Services.AddScoped<IGetUsuariosAscendenteCU, GetUsuariosAscendenteCU>();
 builder.Services.AddScoped<IRecibeIdDevuelveUsuarioCU, RecibeIdDevuelveUsuarioCU>();
@@ -41,6 +43,7 @@ builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
 
 builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();
 builder.Services.AddScoped<IBuscarEnClientesCU, BuscarEnClientesCU>();
+builder.Services.AddScoped<ICrearClienteCU, CrearClienteCU>();
 
 
 
