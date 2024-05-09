@@ -1,4 +1,5 @@
-﻿using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
+﻿using Microsoft.EntityFrameworkCore;
+using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using Papeleria.LogicaNegocio.InterfacesEntidades;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaNegocio.Entidades
 {
+        [Index(nameof(nombre), IsUnique = true)]
+        [Index(nameof(codProveedor), IsUnique = true)]
     public class Articulo : IValidable<Articulo>
     {
         private IRepositorioArticulo _repoitorioArticulo;
@@ -31,19 +34,18 @@ namespace Papeleria.LogicaNegocio.Entidades
             this.stock = stock;
         }
 
+        #region validaciones
         public bool EsValido()
         {
             if(ValidarNombre()&&
-            ValidarCodProveedor())
+            ValidarCodProveedor()
+            )
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
-            
-            
+            else return false;
+
+
         }
         public bool ValidarNombre()
         {
@@ -53,10 +55,11 @@ namespace Papeleria.LogicaNegocio.Entidades
         public bool ValidarCodProveedor()
         {
             int codigo=int.Parse(this.codProveedor);
-            //if (codigo < 13 && _repoitorioArticulo.Where( a => a.codProveedor == codigo)) return false;
+            if (codigo < 13) return false;
             
             return true;
         }
         //todo:stock mayor que 0
+        #endregion
     }
 }

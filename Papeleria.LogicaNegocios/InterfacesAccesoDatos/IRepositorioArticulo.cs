@@ -9,5 +9,6 @@ namespace Papeleria.LogicaNegocio.InterfacesAccesoDatos
 {
     public interface IRepositorioArticulo : IRepositorio<Articulo>
     {
-        IEnumerable<Articulo> GetArticulosOrdenadosAlfabeticamente();    }
+        IEnumerable<Articulo> GetArticulosOrdenadosAlfabeticamente();
+    }
 }

@@ -16,21 +16,31 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
             _context = new PapeleriaContext();
         }
+        #region agregar
         public bool Add(Articulo aAgregar)
         {
             try
             {
-                aAgregar.EsValido();
-                _context.Articulo.Add(aAgregar);
-                _context.SaveChanges();
-                return true;
+                if (aAgregar.EsValido())
+                {
+                    _context.Articulo.Add(aAgregar);
+                    _context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                //sigue aunque devuelva falso
             }
             catch(ArticuloNoValidoException ex)
             {
                 throw ex;
             }
         }
+        #endregion
 
+        #region findAll y findById
         public IEnumerable<Articulo> FindAll()
         {
             return _context.Articulo;
@@ -40,7 +50,9 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
                 return _context.Articulo.Where(articulo => articulo.id==Id).FirstOrDefault();
         }
+        #endregion
 
+        #region remove
         public bool Remove(int id)
         {
             try
@@ -59,7 +71,9 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
                 throw ex;
             }
         }
+        #endregion
 
+        #region update
         public bool Update(Articulo aModificar)
         {
             try
@@ -74,10 +88,12 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
                 throw ex;
             }
         }
+        #endregion
         public IEnumerable<Articulo> GetArticulosOrdenadosAlfabeticamente()
         {
             return this._context.Articulo.OrderBy(articulo => articulo.nombre);
         }
+
     }
 
 }

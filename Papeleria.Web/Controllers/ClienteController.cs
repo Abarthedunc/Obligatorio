@@ -14,9 +14,12 @@ namespace Papeleria.Web.Controllers
         private ICrearClienteCU _crearClienteCU;
         private IClientesCuyoPedidoSupereMontoCU _clientesCuyoPedidoSupereMontoCU;
         private IBuscarEnClientesCU _buscarEnClientesCU;
-        public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU) 
+        public ClienteController(IClientesCuyoPedidoSupereMontoCU clientesCuyoPedidoSupereMontoCU, ICrearClienteCU crearClienteCU,
+            IBuscarEnClientesCU buscarEnClientesCU) 
         {
             _clientesCuyoPedidoSupereMontoCU = clientesCuyoPedidoSupereMontoCU;
+            _crearClienteCU = crearClienteCU;
+            _buscarEnClientesCU = buscarEnClientesCU;
         }  
         // GET: ClienteController
         //todo: el index tiene que ser con clienteDTO

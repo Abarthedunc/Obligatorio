@@ -1,4 +1,4 @@
-﻿@model Papeleria.LogicaNegocio.Entidades.Usuario
+﻿@model Papeleria.LogicaAplicacion.DTOs.UsuarioDTO
 
 @{
     ViewData["Title"] = "Create";
@@ -13,15 +13,15 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="nombreCompleto.nombre" class="control-label"></label>
-                <input asp-for="nombreCompleto.nombre" name="nombre" class="form-control" />
-                <span asp-validation-for="nombreCompleto.nombre" class="text-danger"></span>
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" name="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="nombreCompleto.apellido" class="control-label"></label>
-                <input asp-for="nombreCompleto.apellido" name="apellido" class="form-control" />
-                <span asp-validation-for="nombreCompleto.apellido" class="text-danger"></span>
+                <label asp-for="apellido" class="control-label"></label>
+                <input asp-for="apellido" name="apellido" class="form-control" />
+                <span asp-validation-for="apellido" class="text-danger"></span>
             </div>
 
 

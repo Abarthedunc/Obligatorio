@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Papeleria.LogicaNegocios\Papeleria.LogicaNegocios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CasosDeUso\Pedidos\" />
+  </ItemGroup>
+
 </Project>
