@@ -18,15 +18,21 @@ namespace Papeleria.Web.Controllers
         }
 
         // GET: PedidoController/Create
-        public ActionResult Create()
+        public ActionResult CreatePedidoExpress()
         {
             return View();
         }
-
+       /* [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DerivarPedido() 
+        {
+          if (pedidoDTO.getType) { }
+        
+        }*/
         // POST: PedidoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create()
         {
             try
             {

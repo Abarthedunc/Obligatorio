@@ -19,10 +19,32 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 
         public bool Add(Pedido aAgregar)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool AddPedidoComun(PedidoComun aAgregar)
+        {
+            try
+            {
+                if (aAgregar.EsValido())
+                {
+                    _context.PedidosComunes.Add(aAgregar);
+                    _context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (PedidoComunNoValidoException ex)
+            {
+                throw ex;
+            }
+        }
+        public bool AddPedidoExpress(PedidoExpress aAgregar)
+        {
             try
             {
                 aAgregar.EsValido();
-                _context.Pedidos.Add(aAgregar);
+                _context.PedidosExpress.Add(aAgregar);
                 _context.SaveChanges();
                 return true;
             }

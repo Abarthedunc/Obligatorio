@@ -1,4 +1,5 @@
 ﻿using Papeleria.LogicaNegocio.InterfacesEntidades;
+using Papeleria.LogicaNegocios.Enumerados;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     public class PedidoComun : Pedido, IValidable<PedidoComun>
     {
         public PedidoComun() { }
-        public PedidoComun(DateTime fechaPedido, Cliente cliente) : base(fechaPedido, cliente)
+        public PedidoComun(DateTime fechaPedido,Linea linea, Cliente cliente, double precioTotal, double descuento, EstadoPedido estadoPedido) : base(fechaPedido, cliente)
         {
         }
 

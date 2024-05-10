@@ -22,15 +22,15 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Pedido
         public List<PedidoComunDTO> GetPedidosComunesAsc()
         {
             var pedidosOrdenados = _repositorioPedido.FindAll().OrderBy(p => p.fechaPedido);
-            return null;
             //return pedidosOrdenados.Select(p => PedidoComunDtoMapper.ToDto(p)).ToList(p => p.fechaPedido);
+            return null;
         }
 
         public List<PedidoExpressDTO> GetPedidosExpressAsc()
         {
             var pedidosOrdenados = _repositorioPedido.FindAll().OrderBy(p => p.fechaPedido);
-            return null;
             //return pedidosOrdenados.Select(p => PedidoExpressDtoMapper.ToDto(p)).ToList(p => p.fechaPedido);
+            return null;
         }
     }
 }

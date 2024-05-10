@@ -1,4 +1,6 @@
-﻿using Papeleria.LogicaNegocio.Entidades;
+﻿using Papeleria.LogicaAplicacion.Mappers;
+using Papeleria.LogicaNegocio.Entidades;
+using Papeleria.LogicaNegocios.Enumerados;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,12 @@ namespace Papeleria.LogicaAplicacion.DTOs
     {
         public int id { get; set; }
         public DateTime fechaPedido { get; set; }
-        public Cliente cliente { get; set; }
-        public Linea lineas { get; set; }
-        public PedidoComunDTO(DateTime fechaPedido, ClienteDTO cliente, LineaDTO lineas)
+        public ClienteDTO cliente { get; set; }
+        public LineaDTO lineas { get; set; }
+        public double precioTotal { get; set; }
+        public double descuento { get; set; }
+        public EstadoPedido estadoPedido { get; set; }
+        public PedidoComunDTO(DateTime fechaPedido, ClienteDTO cliente, LineaDTO lineas, double precioTotal, double descuento, EstadoPedido estadoPedido)
         {
         }
         public PedidoComunDTO() { }
@@ -21,8 +26,9 @@ namespace Papeleria.LogicaAplicacion.DTOs
         {
             if (pedidoComun != null)
             {
+                ClienteDTO nuevoCliente =ClienteDtoMapper.ToDto (pedidoComun.cliente);
                 id = pedidoComun.id;
-                cliente = pedidoComun.cliente;
+                cliente = nuevoCliente;
                 fechaPedido = pedidoComun.fechaPedido;
             }
         }

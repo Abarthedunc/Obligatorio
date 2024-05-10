@@ -9,5 +9,7 @@ namespace Papeleria.LogicaNegocio.InterfacesAccesoDatos
 {
     public interface IRepositorioPedido : IRepositorio<Pedido>
     {
+        public bool AddPedidoComun(PedidoComun aAgregar);
+        public bool AddPedidoExpress(PedidoExpress aAgregar);
     }
 }

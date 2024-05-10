@@ -18,7 +18,11 @@ namespace Papeleria.LogicaAplicacion.Mappers
         {
             if(dto!= null)
             {
-                PedidoComun nuevoPedido = new PedidoComun(dto.fechaPedido, dto.cliente);
+                LineaDTO linea = dto.lineas;
+                Linea nuevaLinea = LineaDtoMapper.FromDto(linea);
+                ClienteDTO cliente = dto.cliente;
+                Cliente nuevoCliente = ClienteDtoMapper.FromDto(cliente);
+                PedidoComun nuevoPedido = new PedidoComun(dto.fechaPedido, nuevaLinea, nuevoCliente, dto.precioTotal, dto.descuento, dto.estadoPedido);
                 return nuevoPedido;
             }
             return null;

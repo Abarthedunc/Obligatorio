@@ -14,5 +14,16 @@ namespace Papeleria.LogicaAplicacion.Mappers
         {
             return new LineaDTO(linea);
         }
+        public static Linea FromDto(LineaDTO linea)
+        {
+            if(linea!=null)
+            {
+                ArticuloDTO art = linea.articulo;
+                Articulo nuevoArt = ArticuloDtoMapper.FromDto(art);
+                Linea nuevaLinea = new Linea(nuevoArt, linea.cantUnidades, linea.precioUnitario);
+                return nuevaLinea;
+            }
+            return null;
+        }
     }
 }
