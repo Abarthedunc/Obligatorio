@@ -1,4 +1,6 @@
-﻿using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
+﻿using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
+using Papeleria.LogicaAplicacion.Mappers;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using System;
 using System.Collections.Generic;
@@ -17,9 +19,10 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Articulo
             _repositorioArticulo = repositorioArticulo;
         }
 
-        public IEnumerable<LogicaNegocio.Entidades.Articulo> GetArticulosOrdenados()
+        public List<ArticuloDTO> GetArticulosOrdenados()
         {
-            return _repositorioArticulo.GetArticulosOrdenadosAlfabeticamente();
+            var articulos = _repositorioArticulo.FindAll().OrderBy(a => a.nombre);
+            return articulos.Select(a=>ArticuloDtoMapper.ToDto(a)).ToList();
         }
 
     }

@@ -21,7 +21,7 @@ namespace Papeleria.Web.Controllers
         // GET: ArticuloController
         public ActionResult Index()
         {
-            return View();
+            return View(_articulosOrdenadosCU.GetArticulosOrdenados());
         }
 
         // GET: ArticuloController/Details/5
