@@ -18,9 +18,16 @@ namespace Papeleria.WebApi.Controllers
         }
 
         [HttpGet(Name = "GetArticulosOrdenados")]
-        public IEnumerable<ArticuloDTO> Get()
+        public ActionResult <IEnumerable<ArticuloDTO>> Get()
         {
-            return this._artOrdenadosUC.GetArticulosOrdenados().ToList();
+            try
+            {
+                return Ok(this._artOrdenadosUC.GetArticulosOrdenados().ToList());
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
