@@ -17,18 +17,15 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             _context = new PapeleriaContext();
         }
 
-        public bool Add(Pedido aAgregar)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public bool AddPedidoComun(PedidoComun aAgregar)
+        public bool Add(Pedido aAgregar)
         {
             try
             {
                 if (aAgregar.EsValido())
                 {
-                    _context.PedidosComunes.Add(aAgregar);
+                    _context.Pedidos.Add(aAgregar);
                     _context.SaveChanges();
                     return true;
                 }
@@ -39,20 +36,8 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
                 throw ex;
             }
         }
-        public bool AddPedidoExpress(PedidoExpress aAgregar)
-        {
-            try
-            {
-                aAgregar.EsValido();
-                _context.PedidosExpress.Add(aAgregar);
-                _context.SaveChanges();
-                return true;
-            }
-            catch (PedidoComunNoValidoException ex)
-            {
-                throw ex;
-            }
-        }
+
+        
 
         public IEnumerable<Pedido> FindAll()
         {

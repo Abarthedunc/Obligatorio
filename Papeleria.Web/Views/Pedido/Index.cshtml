@@ -19,15 +19,22 @@
                 @Html.DisplayNameFor(model => model.precioTotal)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.iva)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.descuento)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.estadoPedido)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diasParaLaEntrega)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+@if(Model!=null){
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -37,10 +44,16 @@
                 @Html.DisplayFor(modelItem => item.precioTotal)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.iva)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.descuento)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.estadoPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diasParaLaEntrega)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
@@ -48,6 +61,6 @@
                 <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
             </td>
         </tr>
-}
+}}
     </tbody>
 </table>

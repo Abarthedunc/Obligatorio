@@ -14,13 +14,13 @@ namespace Papeleria.LogicaAplicacion.DTOs
         [ForeignKey(nameof(articulo))] public int articuloId { get; set; }
         public ArticuloDTO articulo { get; set; }
         public int cantUnidades { get; set; }
-        public double precioUnitario { get; set; }
+        public double precioLinea { get; set; }
         public LineaDTO() { }
-        public LineaDTO(ArticuloDTO articulo, int cantUnidades, double precioUnitario)
+        public LineaDTO(ArticuloDTO articulo, int cantUnidades, double precioLinea)
         {
             this.articulo = articulo;
             this.cantUnidades = cantUnidades;
-            this.precioUnitario = precioUnitario;
+            this.precioLinea = precioLinea;
         }
         public LineaDTO(Linea linea)
         {
@@ -28,7 +28,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
             {
                 //preguntarle como seria en el caso de ArticuloDTO
                 cantUnidades = linea.cantUnidades;
-                precioUnitario = linea.precioUnitario;
+                precioLinea = linea.precioLinea;
                 articuloId = linea.articuloId;
                 Id = linea.Id;
             }

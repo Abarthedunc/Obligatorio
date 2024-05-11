@@ -20,7 +20,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
             {
                 ArticuloDTO art = linea.articulo;
                 Articulo nuevoArt = ArticuloDtoMapper.FromDto(art);
-                Linea nuevaLinea = new Linea(nuevoArt, linea.cantUnidades, linea.precioUnitario);
+                Linea nuevaLinea = new Linea(nuevoArt, linea.cantUnidades);
                 return nuevaLinea;
             }
             return null;

@@ -9,6 +9,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Pedidos
 {
     public interface ICrearPedidoCU
     {
-        public void CrearPedidoUC(PedidoComunDTO pedidoACrear);
+        public void CrearPedido(PedidoDTO dto);
     }
 }

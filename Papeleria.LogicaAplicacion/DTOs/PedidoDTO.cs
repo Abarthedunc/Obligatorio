@@ -15,17 +15,26 @@ namespace Papeleria.LogicaAplicacion.DTOs
         public ClienteDTO cliente { get; set; }
         public List<LineaDTO> _lineas { get; set; }
         public double precioTotal { get; set; }
+        public double iva { get; set; }
         public double descuento { get; set; }
         public EstadoPedido estadoPedido { get; set; }
-        public PedidoDTO(int Id, DateTime fecha, ClienteDTO cliente, List<LineaDTO> linea, double precioTotal, double descuento)
+        public int diasParaLaEntrega { get; set; }
+        public PedidoDTO() { }
+        public PedidoDTO(Pedido pedido)
         {
-            this.id = Id;
-            this.fechaPedido= fecha;
-            this.cliente = cliente;
-            this._lineas = linea;
-            this.precioTotal = precioTotal;
-            this.descuento = descuento;
-            this.estadoPedido = estadoPedido;
+            if(pedido != null)
+            {
+                this.fechaPedido = pedido.fechaPedido;
+                this.cliente = new ClienteDTO(pedido.cliente);
+                this._lineas = pedido._lineas.Select(linea => new LineaDTO(linea)).ToList();
+                this.precioTotal = pedido.precioTotal;
+                this.descuento = pedido.descuento;
+                this.estadoPedido = pedido.estadoPedido;
+                this.iva = pedido.iva;
+                this.estadoPedido = pedido.estadoPedido;
+                this.diasParaLaEntrega = pedido.diasParaLaEntrega;
+            }
+            
         }
     }
 }

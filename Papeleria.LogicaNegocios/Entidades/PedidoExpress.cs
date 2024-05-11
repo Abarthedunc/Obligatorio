@@ -11,13 +11,25 @@ namespace Papeleria.LogicaNegocio.Entidades
     public class PedidoExpress : Pedido, IValidable<PedidoExpress>
     {
         public PedidoExpress() { }
-        public PedidoExpress(DateTime fechaPedido,Linea linea, Cliente cliente, Linea lineas, double precioTotal, double descuento, EstadoPedido estadoPedido) : base(fechaPedido, cliente)
-        {
-        }
+        public PedidoExpress(Cliente cliente, List<Linea> _lineas, double descuento, int dias, double iva) : base(cliente, _lineas, descuento, dias, iva)
+         {
+         }
 
         public void EsValido()
         {
             throw new NotImplementedException();
+        }
+        public override void CalcularPrecio()
+        {
+            double precioLineasSumado = 0;
+
+            foreach (Linea l in _lineas)
+            {
+                precioLineasSumado += l.precioLinea;
+            }
+            
+            precioTotal = precioLineasSumado * iva;
+
         }
     }
 }

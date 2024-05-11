@@ -12,20 +12,25 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Pedido
 {
     public class CrearPedidoCU : ICrearPedidoCU
     {
-        private IRepositorioPedido _pedidos;
-        public CrearPedidoCU(IRepositorioPedido pedidos)
+        private IRepositorioPedido _repositorioPedidos;
+        public CrearPedidoCU(IRepositorioPedido repositorioPedidos)
         {
-            _pedidos = pedidos;
+            _repositorioPedidos=repositorioPedidos;
         }
 
-        public void CrearPedidoUC(PedidoComunDTO pedidoACrear)
+        public void CrearPedido(PedidoDTO dto)
         {
-            throw new NotImplementedException();
+            if (dto.diasParaLaEntrega < 5)
+            {
+                _repositorioPedidos.Add(PedidoDtoMapper.ToPedidoExpress(dto));
+            }
+            else
+            {
+                _repositorioPedidos.Add(PedidoDtoMapper.ToPedidoComun(dto));
+
+            }
         }
 
-        void ICrearPedidoCU.CrearPedidoUC(PedidoComunDTO pedidoACrear)
-        {
-            _pedidos.Add(PedidoComunDtoMapper.FromDto(pedidoACrear));
-        }
+        
     }
 }

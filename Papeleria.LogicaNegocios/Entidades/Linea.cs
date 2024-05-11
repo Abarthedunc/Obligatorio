@@ -14,18 +14,24 @@ namespace Papeleria.LogicaNegocio.Entidades
         [ForeignKey(nameof(articulo))] public int articuloId { get; set; }
         public Articulo articulo { get; set; }
         public int cantUnidades { get; set; }
-        public double precioUnitario { get; set; }
+        public double precioLinea { get; set; }
         public Linea() { }
-        public Linea(Articulo articulo, int cantUnidades, double precioUnitario)
+        public Linea(Articulo articulo, int cantUnidades)
         {
             this.articulo = articulo;
             this.cantUnidades = cantUnidades;
-            this.precioUnitario = precioUnitario;
+            this.precioLinea = 0;
         }
 
         public bool EsValido()
         {
             throw new NotImplementedException();
+        }
+        public void CalcularPrecio() 
+        {
+            precioLinea = articulo.precioActual * cantUnidades;
+            
+            
         }
     }
 }

@@ -15,20 +15,33 @@ namespace Papeleria.LogicaNegocio.Entidades
         public Cliente cliente { get; set; }
         public List<Linea> _lineas { get; set; }
         public double precioTotal { get; set; }
+        public double iva {  get; set; }
         public double descuento {  get; set; }
         public EstadoPedido estadoPedido { get; set; }
+        public int diasParaLaEntrega { get; set; }
         public Pedido() { }
 
-        public Pedido(DateTime fechaPedido, Cliente cliente)
-        {
+        
+        public Pedido(Cliente cliente, List<Linea> _lineas, double descuento, int dias, double iva) { 
             //todo: datetime.now
-            this.fechaPedido = fechaPedido;
+            this.fechaPedido = DateTime.Now;
             this.cliente = cliente;
+            this._lineas = _lineas;
+            this.descuento = descuento;
             this.estadoPedido = EstadoPedido.Pendiente;
+            this.diasParaLaEntrega = dias;
+            this.iva = iva;
+            this.precioTotal= 0;
+
         }
 
+        
         public bool EsValido()
         {
+            throw new NotImplementedException();
+        }
+        public virtual void CalcularPrecio() 
+        { 
             throw new NotImplementedException();
         }
     }

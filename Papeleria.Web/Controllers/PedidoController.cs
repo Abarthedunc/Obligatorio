@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaAplicacion.InterfacesCU.Pedidos;
+using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 
 namespace Papeleria.Web.Controllers
 {
     public class PedidoController : Controller
     {
+        private ICrearPedidoCU _crearPedidoCU;
+        public PedidoController(ICrearPedidoCU crearPedidoCU) 
+        {
+            this._crearPedidoCU = crearPedidoCU;
+        }
         // GET: PedidoController
         public ActionResult Index()
         {
@@ -18,24 +26,20 @@ namespace Papeleria.Web.Controllers
         }
 
         // GET: PedidoController/Create
-        public ActionResult CreatePedidoExpress()
+        public ActionResult Create()
         {
             return View();
         }
-       /* [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DerivarPedido() 
-        {
-          if (pedidoDTO.getType) { }
+       
         
-        }*/
         // POST: PedidoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create()
+        public ActionResult Create(PedidoDTO pedidoDTO)
         {
             try
             {
+                _crearPedidoCU.CrearPedido(pedidoDTO);
                 return RedirectToAction(nameof(Index));
             }
             catch
