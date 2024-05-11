@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Papeleria.LogicaAplicacion.DTOs;
 
 namespace Papeleria.Web.Controllers
 {
@@ -18,7 +19,7 @@ namespace Papeleria.Web.Controllers
         }
 
         // GET: PedidoController/Create
-        public ActionResult CreatePedidoExpress()
+        public ActionResult Create()
         {
             return View();
         }
@@ -32,7 +33,7 @@ namespace Papeleria.Web.Controllers
         // POST: PedidoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create()
+        public ActionResult Create(PedidoDTO pedido)
         {
             try
             {
