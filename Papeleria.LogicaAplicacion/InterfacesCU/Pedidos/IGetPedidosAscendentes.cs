@@ -9,7 +9,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Pedidos
 {
     public interface IGetPedidosAscendentes
     {
-        public List<PedidoComunDTO> GetPedidosComunesAsc();
-        public List<PedidoExpressDTO> GetPedidosExpressAsc();
+        public List<PedidoDTO> GetPedidosAsc();
     }
 }
