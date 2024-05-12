@@ -6,7 +6,7 @@
 }
 <div class="text-center">
     <h1 class="display-4">Papeleria</h1>
-    @if (Context.Session.GetString("LogueadoCorreo") != null)
+    @if (!string.IsNullOrEmpty(Context.Session.GetString("LogueadoCorreo")))
     {
         <p>Bienvenido a nuestra pagina </p>
 
