@@ -9,7 +9,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
 {
     public class ClienteDTO
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         public string razonSocial { get; set; }
         public string rut { get; set; }
         public string calle { get; set; }
@@ -19,8 +19,9 @@ namespace Papeleria.LogicaAplicacion.DTOs
         public string nombre { get; set; }
         public string apellido {  get; set; }
         public ClienteDTO() { }
-        public ClienteDTO(string razonSocial, string rut, string calle, string numeroPuerta, string ciudad, double distancia, string nombre, string apellido)
+        public ClienteDTO(int id, string razonSocial, string rut, string calle, string numeroPuerta, string ciudad, double distancia, string nombre, string apellido)
         {
+            this.id = id;
             this.razonSocial = razonSocial;
             this.rut = rut;
             this.calle = calle;
@@ -34,6 +35,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
         {
             if (cliente != null)
             {
+                id = cliente.id;
                 razonSocial = cliente.razonSocial;
                 rut = cliente.rut;
                 calle = cliente.adress.calle;

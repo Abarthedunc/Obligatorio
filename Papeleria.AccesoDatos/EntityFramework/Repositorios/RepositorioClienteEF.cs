@@ -47,7 +47,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
 
         public Cliente FindByID(int id)
         {
-                return _context.Clientes.Where(cliente => cliente.ID == id).FirstOrDefault();
+                return _context.Clientes.Where(cliente => cliente.id == id).FirstOrDefault();
 
         }
 
@@ -55,7 +55,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
             try
             {
-                Cliente aRemover = _context.Clientes.Where(cliente => cliente.ID == id)
+                Cliente aRemover = _context.Clientes.Where(cliente => cliente.id == id)
                     .FirstOrDefault();
                 if (aRemover == null)
                 {

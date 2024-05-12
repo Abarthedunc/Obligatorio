@@ -18,8 +18,9 @@ namespace Papeleria.LogicaAplicacion.DTOs
         public int stock {  get; set; }
         public int id { get; set; }
         public ArticuloDTO() { }
-        public ArticuloDTO(string nombre, string descripcion, string codProveedor, double precioActual, int stock)
+        public ArticuloDTO(int id,string nombre, string descripcion, string codProveedor, double precioActual, int stock)
         {
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.codProveedor = codProveedor;
@@ -31,6 +32,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
         {
             if (articulo != null)
             {
+                id = articulo.id;
                 nombre = articulo.nombre;
                 descripcion = articulo.descripcion;
                 codProveedor = articulo.codProveedor;
