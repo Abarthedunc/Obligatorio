@@ -1,5 +1,6 @@
 ﻿using Papeleria.LogicaAplicacion.DTOs;
 using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
+using Papeleria.LogicaAplicacion.Mappers;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,10 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Cliente
         }
         
        
-         IEnumerable<LogicaNegocio.Entidades.Cliente> IBuscarEnClientesCU.BuscarEnClientes(string criterio)
+         IEnumerable<ClienteDTO> IBuscarEnClientesCU.BuscarEnClientes(string criterio)
         {
-            return _repositorioClientes.BuscarEnClientes(criterio);
+            var clientes = _repositorioClientes.BuscarEnClientes(criterio);
+            return clientes.Select(c => ClienteDtoMapper.ToDto(c)).ToList();
         }
     }
 }

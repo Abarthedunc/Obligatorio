@@ -10,6 +10,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Clientes
 {
     public interface IBuscarEnClientesCU
     {
-        public IEnumerable<Cliente> BuscarEnClientes(string criterio);
+        public IEnumerable<ClienteDTO> BuscarEnClientes(string criterio);
     }
 }

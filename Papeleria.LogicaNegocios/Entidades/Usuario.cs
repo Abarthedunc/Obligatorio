@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Papeleria.BusinessLogic.ValueObjects;
+using Papeleria.LogicaNegocio.Exceptions.Cliente;
+using Papeleria.LogicaNegocio.Exceptions.Usuario;
 using Papeleria.LogicaNegocio.InterfacesEntidades;
 using Papeleria.LogicaNegocio.ValueObjects;
 using System;
@@ -21,26 +23,32 @@ namespace Papeleria.LogicaNegocio.Entidades
         public bool esAdmin { get; set; }
         public Usuario() { }
 
-        public bool EsValido()
+        public void EsValido()
         {
-            if(ValidarMail()&&
-            ValidarNombreCompleto())
-            {
-                return true;
-            }
-            return false;
-            
+            ValidarMail();
+            ValidarNombreCompleto();
         }
         public bool ValidarMail()
         {
-            if (this.email.Contains("@")&& this.email.Substring((email.Length - 4), 4) == ".com") return true;
-            return false;
+            if (this.email.Contains("@") && this.email.Substring((email.Length - 4), 4) == ".com") return true;
+            else
+            {
+                throw new UsuarioNoValidoException("email incorrecto");
+            }
+                return false;
         }
         
         public bool ValidarNombreCompleto()
         {
-            if(!ValidarNombre(this.nombreCompleto.nombre)) return false;
-            if (!ValidarNombre(this.nombreCompleto.apellido)) return false;
+            if (!ValidarNombre(this.nombreCompleto.nombre)) {
+                throw new UsuarioNoValidoException
+                    ("Nombre ingresado invalido, recuede que si el nombre tiene caracteres no alfabeticos(espacio, apostrofe o guion estos no pueden esta ubicados ni al principio ni al final de la cadena");
+                    }
+            if (!ValidarNombre(this.nombreCompleto.apellido))
+            {
+                throw new UsuarioNoValidoException
+                    ("Apellido ingresado invalido, recuede que si el nombre tiene caracteres no alfabeticos(espacio, apostrofe o guion estos no pueden esta ubicados ni al principio ni al final de la cadena");
+            }
             return true;
         }
         public bool ValidarNombre(string parteNombre)

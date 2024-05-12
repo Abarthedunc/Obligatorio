@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Papeleria.LogicaNegocio.Exceptions.Articulo;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using Papeleria.LogicaNegocio.InterfacesEntidades;
 using System;
@@ -35,29 +36,22 @@ namespace Papeleria.LogicaNegocio.Entidades
         }
 
         #region validaciones
-        public bool EsValido()
+        public void EsValido()
         {
-            if(ValidarNombre()&&
-            ValidarCodProveedor()
-            )
+            ValidarNombre();
+            ValidarCodProveedor();
+        }
+        public void ValidarNombre()
+        {
+            if(this.nombre.Length < 9 && this.nombre.Length > 199)
             {
-                return true;
+                throw new ArticuloNoValidoException("Verifique el largo de su nombre y que no se repita");
             }
-            else return false;
-
-
         }
-        public bool ValidarNombre()
-        {
-            if(this.nombre.Length>9&&this.nombre.Length<199) { return true; }
-            return false;
-        }
-        public bool ValidarCodProveedor()
+        public void ValidarCodProveedor()
         {
             int codigo=int.Parse(this.codProveedor);
-            if (codigo < 13) return false;
-            
-            return true;
+            if (codigo != 13) throw new ArticuloNoValidoException("El codigo de proveedor debe tener 13 digitos");
         }
         //todo:stock mayor que 0
         #endregion

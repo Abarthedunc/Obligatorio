@@ -1,4 +1,5 @@
-﻿using Papeleria.LogicaNegocio.InterfacesEntidades;
+﻿using Papeleria.LogicaNegocio.Exceptions.Linea;
+using Papeleria.LogicaNegocio.InterfacesEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,24 +24,19 @@ namespace Papeleria.LogicaNegocio.Entidades
             this.precioLinea = 0;
         }
 
-        public bool EsValido()
+        public void EsValido()
         {
-            if (ValidarStock())
-            {
-                return true;
-            }
-            return false;
+            ValidarStock();
             
         }
-        public bool ValidarStock()
+        public void ValidarStock()
         {
             //validar que para articulo de las lineas haya un stock mayor a 0
             int stock = this.articulo.stock;
-            if (stock > 0 && cantUnidades>stock)
+            if (stock <= 0 && cantUnidades<stock)
             {
-                return true;
+                throw new LineaNoValidaException("no puede ingresar cantidad de unidades mayor al stock disponible");
             }
-            return false;
 
         }
         public void CalcularPrecio() 
