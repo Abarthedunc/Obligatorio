@@ -43,12 +43,11 @@ namespace Papeleria.Web.Controllers
         // GET: PedidoController/Create
         public ActionResult Create()
         {
-            if (ViewBag.LineaPedido != null)
+            if (tempPedido != null)
             {
-                tempPedido._lineas.Add(ViewBag.LineaPedido);
-                ViewBag.pedido= tempPedido;
+                ViewBag._tempListaLinea = tempPedido._lineas;
             }
-            
+
 
             return View();
         }
@@ -90,7 +89,12 @@ namespace Papeleria.Web.Controllers
             try
             {
                 l.articulo = _findByIDArticuloCU.EncontrarPorIdArticulo(l.articuloId);
-                ViewBag.LineaPedido = l;
+                if(tempPedido==null)
+                {
+                    tempPedido = new PedidoDTO { _lineas = new List<LineaDTO>()};
+                }
+                tempPedido._lineas.Add(l);
+
                 return RedirectToAction(nameof(Create));
 
             }

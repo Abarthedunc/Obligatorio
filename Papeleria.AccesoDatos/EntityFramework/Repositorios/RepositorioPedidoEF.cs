@@ -23,13 +23,13 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
             try
             {
-                if (aAgregar.EsValido())
-                {
+                //if (aAgregar.EsValido())
+               /// {
                     _context.Pedidos.Add(aAgregar);
                     _context.SaveChanges();
                     return true;
-                }
-                return false;
+                //}
+               // return false;
             }
             catch (PedidoComunNoValidoException ex)
             {
