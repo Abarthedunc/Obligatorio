@@ -25,7 +25,23 @@ namespace Papeleria.LogicaNegocio.Entidades
 
         public bool EsValido()
         {
-            throw new NotImplementedException();
+            if (ValidarStock())
+            {
+                return true;
+            }
+            return false;
+            
+        }
+        public bool ValidarStock()
+        {
+            //validar que para articulo de las lineas haya un stock mayor a 0
+            int stock = this.articulo.stock;
+            if (stock > 0 && cantUnidades>stock)
+            {
+                return true;
+            }
+            return false;
+
         }
         public void CalcularPrecio() 
         {

@@ -61,14 +61,12 @@ namespace Papeleria.Web.Controllers
             }
         }
 
-
-        [HttpPost]
         public IActionResult Logout()
         {
             try
             {
                 
-                HttpContext.Session.Clear();
+                HttpContext.Session.SetString("LogueadoCorreo", "");
 
                 return RedirectToAction("Index", "Home");
             }

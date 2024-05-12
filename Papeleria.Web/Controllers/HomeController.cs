@@ -16,8 +16,6 @@ namespace Papeleria.Web.Controllers
 
         public IActionResult Index()
         {
-            
-            
                 ViewBag.MensajeBienvenida = "Debe iniciar Sessión";
             
             return View();

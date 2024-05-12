@@ -19,18 +19,11 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Pedido
         {
             this._repositorioPedido = repositorioPedido;
         }
-        public List<PedidoComunDTO> GetPedidosComunesAsc()
+       
+        List<PedidoDTO> IGetPedidosAscendentes.GetPedidosAsc()
         {
             var pedidosOrdenados = _repositorioPedido.FindAll().OrderBy(p => p.fechaPedido);
-            //return pedidosOrdenados.Select(p => PedidoComunDtoMapper.ToDto(p)).ToList(p => p.fechaPedido);
-            return null;
-        }
-
-        public List<PedidoExpressDTO> GetPedidosExpressAsc()
-        {
-            var pedidosOrdenados = _repositorioPedido.FindAll().OrderBy(p => p.fechaPedido);
-            //return pedidosOrdenados.Select(p => PedidoExpressDtoMapper.ToDto(p)).ToList(p => p.fechaPedido);
-            return null;
+            return pedidosOrdenados.Select(p => PedidoDtoMapper.ToDto(p)).ToList();
         }
     }
 }
