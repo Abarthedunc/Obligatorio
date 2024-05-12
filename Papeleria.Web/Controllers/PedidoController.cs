@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using Microsoft.IdentityModel.Tokens;
 using Papeleria.LogicaAplicacion.DTOs;
+using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
 using Papeleria.LogicaAplicacion.InterfacesCU.Pedidos;
+using Papeleria.LogicaNegocio.Entidades;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 
 namespace Papeleria.Web.Controllers
@@ -9,9 +13,15 @@ namespace Papeleria.Web.Controllers
     public class PedidoController : Controller
     {
         private ICrearPedidoCU _crearPedidoCU;
-        public PedidoController(ICrearPedidoCU crearPedidoCU) 
+        private IArticulosOrdenadosAlfabeticamenteCU _articulosCU;
+        
+        private static PedidoDTO tempPedido;
+        private static List<LineaDTO> _tempListaLineas;
+        private static LineaDTO tempLinea;
+        public PedidoController(ICrearPedidoCU crearPedidoCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados)
         {
             this._crearPedidoCU = crearPedidoCU;
+            this._articulosCU = articulosOrdenados;
         }
         // GET: PedidoController
         public ActionResult Index()
@@ -28,18 +38,25 @@ namespace Papeleria.Web.Controllers
         // GET: PedidoController/Create
         public ActionResult Create()
         {
+
             return View();
         }
-       
-        
+
+
         // POST: PedidoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(PedidoDTO pedidoDTO)
         {
+            /*tengo que cargarle a pedidodto la lista de lineas*/
             try
             {
+                if (tempPedido != null && tempPedido._lineas.Count > 0)
+                {
+                    pedidoDTO._lineas = tempPedido._lineas;
+                }
                 _crearPedidoCU.CrearPedido(pedidoDTO);
+                tempPedido = null;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -47,7 +64,31 @@ namespace Papeleria.Web.Controllers
                 return View();
             }
         }
+        
+        public ActionResult AgregarArticuloView() 
+        {
+            ViewBag.Articulos = _articulosCU.GetArticulosOrdenados();
+            
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AgregarArticulo(LineaDTO l)
+        {
+            try
+            {
+               
+                tempLinea = l;
+                _tempListaLineas.Add(tempLinea);
 
+                return RedirectToAction(nameof(Create));
+            }
+
+            catch
+            {
+                return View();
+            }
+        }
         // GET: PedidoController/Edit/5
         public ActionResult Edit(int id)
         {

@@ -12,7 +12,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     public class Cliente : IValidable<Cliente>
     {
         
-        public int ID { get; set; }
+        public int id { get; set; }
         public string razonSocial { get; set; }
         public string rut { get; set; }
         public Direccion adress { get; set; }
