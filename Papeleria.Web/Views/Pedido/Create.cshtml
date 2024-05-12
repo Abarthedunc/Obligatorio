@@ -35,6 +35,33 @@
             </div>
         </form>
     </div>
+    @if (ViewBag.tempPedido!= null)
+    {
+        <h4>Líneas </h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Artículo</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+
+
+                    <!-- Agrega más columnas según necesites -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var linea in ViewBag.LineaPedido._lineas)
+                {
+                    <tr>
+                        <td>@linea.articulo.Nombre</td>
+                    <td>@linea.cantidad</td>
+                        <td>@linea.precioLinea</td>
+
+                    <!-- Agrega más columnas según necesites -->
+                </tr>
+            }
+        </tbody>
+    </table>}
     <div>
         <form asp-action="AgregarArticuloView">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

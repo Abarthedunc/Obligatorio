@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Papeleria.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b1966db5c8d841e4a4c068e761925a787beb762")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+526d2843d94cd2addf3de617718b838514785de2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Papeleria.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Papeleria.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,14 +14,19 @@ namespace Papeleria.Web.Controllers
     {
         private ICrearPedidoCU _crearPedidoCU;
         private IArticulosOrdenadosAlfabeticamenteCU _articulosCU;
+        private IFindByIDArticuloCU _findByIDArticuloCU;
         
         private static PedidoDTO tempPedido;
         private static List<LineaDTO> _tempListaLineas;
         private static LineaDTO tempLinea;
-        public PedidoController(ICrearPedidoCU crearPedidoCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados)
+
+
+        public PedidoController(ICrearPedidoCU crearPedidoCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados, IFindByIDArticuloCU findByIDArticuloCU)
         {
+           
             this._crearPedidoCU = crearPedidoCU;
             this._articulosCU = articulosOrdenados;
+            this._findByIDArticuloCU = findByIDArticuloCU;
         }
         // GET: PedidoController
         public ActionResult Index()
@@ -38,6 +43,12 @@ namespace Papeleria.Web.Controllers
         // GET: PedidoController/Create
         public ActionResult Create()
         {
+            if (ViewBag.LineaPedido != null)
+            {
+                tempPedido._lineas.Add(ViewBag.LineaPedido);
+                ViewBag.pedido= tempPedido;
+            }
+            
 
             return View();
         }
@@ -48,6 +59,7 @@ namespace Papeleria.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PedidoDTO pedidoDTO)
         {
+            
             /*tengo que cargarle a pedidodto la lista de lineas*/
             try
             {
@@ -77,16 +89,15 @@ namespace Papeleria.Web.Controllers
         {
             try
             {
-               
-                tempLinea = l;
-                _tempListaLineas.Add(tempLinea);
-
+                l.articulo = _findByIDArticuloCU.EncontrarPorIdArticulo(l.articuloId);
+                ViewBag.LineaPedido = l;
                 return RedirectToAction(nameof(Create));
+
             }
 
             catch
             {
-                return View();
+                return RedirectToAction(nameof(Create));
             }
         }
         // GET: PedidoController/Edit/5

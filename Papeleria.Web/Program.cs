@@ -45,7 +45,7 @@ builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoS
 builder.Services.AddScoped<IBuscarEnClientesCU, BuscarEnClientesCU>();
 builder.Services.AddScoped<ICrearClienteCU, CrearClienteCU>();
 builder.Services.AddScoped<IGetClientesCU, GetClientesCU>();
-
+builder.Services.AddScoped<IFindByIDArticuloCU, FindByIdArticuloCU>();
 
 
 var app = builder.Build();
