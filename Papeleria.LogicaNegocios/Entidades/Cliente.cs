@@ -1,4 +1,5 @@
 ﻿using Papeleria.BusinessLogic.ValueObjects;
+using Papeleria.LogicaNegocio.Exceptions.Cliente;
 using Papeleria.LogicaNegocio.InterfacesEntidades;
 using Papeleria.LogicaNegocio.ValueObjects;
 using System;
@@ -36,16 +37,17 @@ namespace Papeleria.LogicaNegocio.Entidades
             nombreCompleto = new NombreCompletoClientes(nombre, apellido);
         }
 
-        public bool EsValido()
+        public void EsValido()
         {
-            if (ValidarRUT()) return true;
-            return false;
+            ValidarRUT();
         }
 
-        public bool ValidarRUT()
+        public void ValidarRUT()
         {
-            if (this.rut.Length < 12) return false;
-            return true;
+            if (this.rut.Length != 12)
+            {
+                throw new ClienteNoValidoException("El rut debe tener 12 digitos");
+            }
         }
     }
 }

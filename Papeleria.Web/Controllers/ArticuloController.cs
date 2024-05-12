@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Papeleria.LogicaAplicacion.DTOs;
 using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
+using Papeleria.LogicaNegocio.Exceptions.Articulo;
 
 namespace Papeleria.Web.Controllers
 {
@@ -31,8 +32,9 @@ namespace Papeleria.Web.Controllers
         }
 
         // GET: ArticuloController/Create
-        public ActionResult Create()
+        public ActionResult Create(string mensaje)
         {
+            ViewBag.mensaje = mensaje;
             return View();
         }
 
@@ -43,10 +45,14 @@ namespace Papeleria.Web.Controllers
         {
             try
             {
-                _crearArticuloCU.CrearArticulo(articuloDTO);
-                return RedirectToAction(nameof(Index));
+                if (_crearArticuloCU.CrearArticulo(articuloDTO))
+                {
+                    return RedirectToAction(nameof(Index), new { mensaje = "Articulo creado correctamente" });
+                }
+                
+                return RedirectToAction(nameof(Index), new { mensaje = "Articulo no valido, por favor revise que el nombre" });
             }
-            catch
+            catch (ArticuloNoValidoException ex)
             {
                 return View();
             }

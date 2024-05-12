@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Papeleria.LogicaNegocio.Exceptions.Cliente;
 using Papeleria.LogicaNegocio.InterfacesEntidades;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,12 @@ namespace Papeleria.LogicaNegocio.ValueObjects
             this.ciudad = ciudad;
         }
 
-        public bool EsValido()
+        public void EsValido()
         {
-            throw new NotImplementedException();
+            if(string.IsNullOrEmpty(calle)|| string.IsNullOrEmpty(numeroPuerta)|| string.IsNullOrEmpty(ciudad))
+            {
+                throw new ClienteNoValidoException("direccion invalida, por favor asegurese de ingresar todos los campos");
+            }
         }
     }
 }

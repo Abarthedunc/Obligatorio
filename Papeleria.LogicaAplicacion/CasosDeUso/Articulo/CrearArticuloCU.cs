@@ -19,9 +19,13 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Articulo
             _repositorioArticulo = repositorioArticulo;
         }
 
-        public void CrearArticulo(ArticuloDTO dtoACrear)
+        public bool CrearArticulo(ArticuloDTO dtoACrear)
         {
-            this._repositorioArticulo.Add(ArticuloDtoMapper.FromDto(dtoACrear));
+            if (this._repositorioArticulo.Add(ArticuloDtoMapper.FromDto(dtoACrear)))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

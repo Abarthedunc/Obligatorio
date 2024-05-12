@@ -9,6 +9,6 @@ namespace Papeleria.LogicaAplicacion.InterfacesCU.Articulos
 {
     public interface ICrearArticuloCU
     {
-        public void CrearArticulo(ArticuloDTO dtoACrear);
+        public bool CrearArticulo(ArticuloDTO dtoACrear);
     }
 }

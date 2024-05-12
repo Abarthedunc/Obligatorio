@@ -23,13 +23,9 @@ namespace Papeleria.LogicaNegocio.Entidades
             this._repositorioPedido = repositorioPedido;
         }
 
-        public bool EsValido()
+        public void EsValido()
         {
-            if (ValidarCliente())
-            {
-                return true;
-            }
-            return false;
+            ValidarCliente();
             
         }
         

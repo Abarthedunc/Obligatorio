@@ -36,7 +36,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         }
 
         
-        public bool EsValido()
+        public void EsValido()
         {
             throw new NotImplementedException();
         }
