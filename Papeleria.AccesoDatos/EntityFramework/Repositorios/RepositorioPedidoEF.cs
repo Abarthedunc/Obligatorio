@@ -24,6 +24,11 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             try
             {
                 aAgregar.EsValido();
+                aAgregar.cliente = null;
+                foreach(Linea l in aAgregar._lineas)
+                {
+                    l.articulo = null;
+                }
                 _context.Pedidos.Add(aAgregar);
                 _context.SaveChanges();
                 return true;
