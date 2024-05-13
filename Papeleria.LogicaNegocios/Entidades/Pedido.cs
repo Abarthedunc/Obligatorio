@@ -35,11 +35,8 @@ namespace Papeleria.LogicaNegocio.Entidades
 
         }
 
-        
-        public void EsValido()
-        {
-            throw new NotImplementedException();
-        }
+
+        public abstract void EsValido();
         public virtual void CalcularPrecio() 
         { 
             throw new NotImplementedException();

@@ -11,7 +11,7 @@ using System.Timers;
 
 namespace Papeleria.LogicaNegocio.Entidades
 {
-    public class PedidoComun : Pedido, IValidable<PedidoComun>
+    public class PedidoComun : Pedido
     {
         private IRepositorioPedido _repositorioPedido;
         public PedidoComun() { }
@@ -23,7 +23,7 @@ namespace Papeleria.LogicaNegocio.Entidades
             this._repositorioPedido = repositorioPedido;
         }
 
-        public void EsValido()
+        public override void EsValido()
         {
             ValidarCliente();
             
