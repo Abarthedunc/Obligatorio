@@ -99,15 +99,24 @@ namespace Papeleria.Web.Controllers
                 return View();
             }
         }
-        public ActionResult ClientesCuyoPedidoSupereMonto()
+        public ActionResult ClientesCuyoPedidoSupereMonto(string mensaje)
         {
+            ViewBag.mensaje = mensaje;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientesCuyoPedidoSupereMonto(double monto)
         {
-            return View(this._clientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(monto));
+            try
+            {
+                this._clientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(monto);
+            }
+            catch(Exception ex) 
+            {
+                return RedirectToAction("Index", new { mensaje = ex.Message });
+            }
+            return View();
         }
         public ActionResult BuscarEnClientes()
         {

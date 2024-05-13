@@ -18,7 +18,7 @@ namespace Papeleria.Web.Controllers
         private IFindByIDArticuloCU _findByIDArticuloCU;
         private IGetClientesCU _getClientesCU;
         private IFindClienteByIDCU _findClienteByID;
-        private IGetPedidosAscendentes _getPedidosAscendentes;
+        //private IGetPedidosAscendentes _getPedidosAscendentes;
         
         private static PedidoDTO tempPedido;
         private static List<LineaDTO> _tempListaLineas;
@@ -27,8 +27,8 @@ namespace Papeleria.Web.Controllers
 
         public PedidoController(ICrearPedidoCU crearPedidoCU,
             IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados, IFindByIDArticuloCU findByIDArticuloCU, 
-            IGetClientesCU getClientesCU, IFindClienteByIDCU findClienteByIDCU,
-            IGetPedidosAscendentes getPedidosAscendentes)
+            IGetClientesCU getClientesCU, IFindClienteByIDCU findClienteByIDCU)
+            //IGetPedidosAscendentes getPedidosAscendentes)
         {
            
             this._crearPedidoCU = crearPedidoCU;
@@ -36,12 +36,12 @@ namespace Papeleria.Web.Controllers
             this._findByIDArticuloCU = findByIDArticuloCU;
             this._getClientesCU= getClientesCU;
             this._findClienteByID = findClienteByIDCU;
-            this._getPedidosAscendentes = getPedidosAscendentes;
+            //this._getPedidosAscendentes = getPedidosAscendentes;
         }
         // GET: PedidoController
         public ActionResult Index()
         {
-            return View(this._getPedidosAscendentes.GetPedidosAsc());
+            return View();
         }
 
         // GET: PedidoController/Details/5
