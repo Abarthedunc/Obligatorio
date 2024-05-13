@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Papeleria.LogicaAplicacion.DTOs;
 using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
+using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
 using Papeleria.LogicaAplicacion.InterfacesCU.Pedidos;
 using Papeleria.LogicaNegocio.Entidades;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
@@ -15,18 +16,22 @@ namespace Papeleria.Web.Controllers
         private ICrearPedidoCU _crearPedidoCU;
         private IArticulosOrdenadosAlfabeticamenteCU _articulosCU;
         private IFindByIDArticuloCU _findByIDArticuloCU;
+        private IGetClientesCU _getClientesCU;
+        private IFindClienteByIDCU _findClienteByID;
         
         private static PedidoDTO tempPedido;
         private static List<LineaDTO> _tempListaLineas;
         private static LineaDTO tempLinea;
 
 
-        public PedidoController(ICrearPedidoCU crearPedidoCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados, IFindByIDArticuloCU findByIDArticuloCU)
+        public PedidoController(ICrearPedidoCU crearPedidoCU, IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados, IFindByIDArticuloCU findByIDArticuloCU, IGetClientesCU getClientesCU, IFindClienteByIDCU findClienteByIDCU)
         {
            
             this._crearPedidoCU = crearPedidoCU;
             this._articulosCU = articulosOrdenados;
             this._findByIDArticuloCU = findByIDArticuloCU;
+            this._getClientesCU= getClientesCU;
+            this._findClienteByID = findClienteByIDCU;
         }
         // GET: PedidoController
         public ActionResult Index()
@@ -43,6 +48,7 @@ namespace Papeleria.Web.Controllers
         // GET: PedidoController/Create
         public ActionResult Create()
         {
+            ViewBag.Clientes=_getClientesCU.GetClienteDTOs();
             if (tempPedido != null)
             {
                 ViewBag._tempListaLinea = tempPedido._lineas;
@@ -58,13 +64,14 @@ namespace Papeleria.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PedidoDTO pedidoDTO)
         {
-            
+            pedidoDTO.cliente = _findClienteByID.EncontrarPorIdCliente(pedidoDTO.clienteId);
             /*tengo que cargarle a pedidodto la lista de lineas*/
             try
             {
                 if (tempPedido != null && tempPedido._lineas.Count > 0)
                 {
                     pedidoDTO._lineas = tempPedido._lineas;
+                    
                 }
                 _crearPedidoCU.CrearPedido(pedidoDTO);
                 tempPedido = null;
@@ -72,6 +79,12 @@ namespace Papeleria.Web.Controllers
             }
             catch
             {
+                tempPedido = null;
+                ViewBag.Clientes = _getClientesCU.GetClienteDTOs();
+                if (tempPedido != null)
+                {
+                    ViewBag._tempListaLinea = tempPedido._lineas;
+                }
                 return View();
             }
         }
