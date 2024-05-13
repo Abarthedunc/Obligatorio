@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj": {}
+    "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
+    "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
+        "projectUniqueName": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
         "projectName": "Papeleria.AccesoDatos",
-        "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
-        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\obj\\",
+        "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj",
+        "packagesPath": "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ClaraSchellembergAbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
               }
             }
           }
@@ -79,24 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj": {
+    "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
         "projectName": "Papeleria.LogicaAplicacion",
-        "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
-        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\obj\\",
+        "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj",
+        "packagesPath": "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ClaraSchellembergAbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,11 +112,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj"
               },
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
               }
             }
           }
@@ -151,24 +151,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
+    "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
+        "projectUniqueName": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
         "projectName": "Papeleria.LogicaNegocios",
-        "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
-        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\obj\\",
+        "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj",
+        "packagesPath": "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ClaraSchellembergAbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -228,24 +228,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj": {
+    "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj",
         "projectName": "Papeleria.WebApi",
-        "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj",
-        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.WebApi\\Papeleria.WebApi.csproj",
+        "packagesPath": "C:\\Users\\ClaraSchellembergAbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ClaraSchellembergAbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -261,14 +261,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.AccesoDatos\\Papeleria.AccesoDatos.csproj"
               },
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaAplicacion\\Papeleria.LogicaAplicacion.csproj"
               },
-              "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
-                "projectPath": "C:\\Users\\alexb\\OneDrive\\Documentos\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
+              "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj": {
+                "projectPath": "C:\\Users\\ClaraSchellembergAbe\\Documents\\GitHub\\Obligatorio\\Papeleria.LogicaNegocios\\Papeleria.LogicaNegocios.csproj"
               }
             }
           }
@@ -312,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
