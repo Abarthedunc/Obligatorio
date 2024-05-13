@@ -23,17 +23,14 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
             try
             {
-                if (aAgregar.EsValido())
-                {
-                    _context.Pedidos.Add(aAgregar);
-                    _context.SaveChanges();
-                    return true;
-                }
-                return false;
+                aAgregar.EsValido();
+                _context.Pedidos.Add(aAgregar);
+                _context.SaveChanges();
+                return true;
             }
-            catch (PedidoComunNoValidoException ex)
+            catch (Exception ex)
             {
-                throw ex;
+                throw new PedidoComunNoValidoException("Nombre y codigo de proveedor no se deben repetir");
             }
         }
 
