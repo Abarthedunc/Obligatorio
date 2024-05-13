@@ -54,7 +54,7 @@ namespace Papeleria.Web.Controllers
             }
             catch (ArticuloNoValidoException ex)
             {
-                return View();
+                return RedirectToAction("Create", new {mensaje = ex.Message});
             }
         }
 

@@ -50,8 +50,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         }
         public void ValidarCodProveedor()
         {
-            int codigo=int.Parse(this.codProveedor);
-            if (codigo != 13) throw new ArticuloNoValidoException("El codigo de proveedor debe tener 13 digitos");
+            if (this.codProveedor.Length != 13) throw new ArticuloNoValidoException("El codigo de proveedor debe tener 13 digitos");
         }
         //todo:stock mayor que 0
         #endregion

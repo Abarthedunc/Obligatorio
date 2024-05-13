@@ -1,7 +1,12 @@
 ﻿@model Papeleria.LogicaAplicacion.DTOs.ArticuloDTO
-
 @{
     ViewData["Title"] = "Create";
+}
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div class="alert alert-danger">
+        @ViewBag.mensaje
+    </div>
 }
 
 <h1>Create</h1>
