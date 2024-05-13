@@ -1,4 +1,5 @@
-﻿using Papeleria.LogicaNegocio.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using Papeleria.LogicaNegocio.Entidades;
 using Papeleria.LogicaNegocio.Exceptions.PedidoComun;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using System;
@@ -24,7 +25,9 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             try
             {
                 aAgregar.EsValido();
-                aAgregar.cliente = null;
+                this._context.Entry(aAgregar.cliente).State = EntityState.Unchanged;
+                //aAgregar.clienteId = aAgregar.cliente.id;
+                //aAgregar.cliente = null;
                 foreach(Linea l in aAgregar._lineas)
                 {
                     l.articulo = null;
