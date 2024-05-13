@@ -25,9 +25,9 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             try
             {
                 aAgregar.EsValido();
-                this._context.Entry(aAgregar.cliente).State = EntityState.Unchanged;
-                //aAgregar.clienteId = aAgregar.cliente.id;
-                //aAgregar.cliente = null;
+                //this._context.Entry(aAgregar.cliente).State = EntityState.Unchanged;
+                aAgregar.clienteId = aAgregar.cliente.id;
+                aAgregar.cliente = null;
                 foreach(Linea l in aAgregar._lineas)
                 {
                     l.articulo = null;
