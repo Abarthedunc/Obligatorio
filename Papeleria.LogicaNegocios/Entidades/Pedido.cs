@@ -2,6 +2,7 @@
 using Papeleria.LogicaNegocios.Enumerados;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Papeleria.LogicaNegocio.Entidades
     {
         public int id { get; set; }
         public DateTime fechaPedido { get; set; }
+        [ForeignKey(nameof(cliente))] public int clienteId { get; set; }
         public Cliente cliente { get; set; }
         public List<Linea> _lineas { get; set; }
         public double precioTotal { get; set; }
