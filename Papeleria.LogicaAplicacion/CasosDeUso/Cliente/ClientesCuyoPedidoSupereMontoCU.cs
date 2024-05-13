@@ -21,6 +21,7 @@ namespace Papeleria.LogicaAplicacion.CasosDeUso.Cliente
 
         IEnumerable<LogicaNegocio.Entidades.Cliente> IClientesCuyoPedidoSupereMontoCU.ClientesCuyoPedidoSupereMonto(double monto)
         {
+
             return _repositorioClientes.ClientesCuyoPedidoSupereMonto(monto);
         }
     }

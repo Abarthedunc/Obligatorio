@@ -97,8 +97,8 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         IEnumerable<Cliente> IRepositorioCliente.ClientesCuyoPedidoSupereMonto(double valor) 
         {
             List<Pedido> _pedidosAux = new List<Pedido>();
-            _pedidosAux=_context.Pedidos.Where(p => p.precioTotal > valor).ToList();
-            var clienteAux= _pedidosAux.Select(c => c.cliente).ToList();
+            _pedidosAux=_context.Pedidos.Where(p => p.precioTotal >= valor).Include(p => p.cliente).Distinct().ToList();
+            IEnumerable<Cliente> clienteAux= _pedidosAux.Select(c => c.cliente).ToList();
             return clienteAux;
         }
     }

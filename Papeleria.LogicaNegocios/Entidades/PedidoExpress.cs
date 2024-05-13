@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Papeleria.LogicaNegocio.Entidades
 {
-    public class PedidoExpress : Pedido, IValidable<PedidoExpress>
+    public class PedidoExpress : Pedido
     {
         public PedidoExpress() { }
         public PedidoExpress(Cliente cliente, List<Linea> _lineas, double descuento, int dias, double iva) : base(cliente, _lineas, descuento, dias, iva)
          {
          }
 
-        public void EsValido()
+        public override void EsValido()
         {
             throw new NotImplementedException();
         }
