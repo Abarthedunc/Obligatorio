@@ -21,7 +21,7 @@ namespace Papeleria.LogicaNegocio.Entidades
         {
             this.articulo = articulo;
             this.cantUnidades = cantUnidades;
-            this.precioLinea = 0;
+            this.precioLinea = CalcularPrecio();
         }
 
         public void EsValido()
@@ -39,9 +39,11 @@ namespace Papeleria.LogicaNegocio.Entidades
             }
 
         }
-        public void CalcularPrecio() 
+        public double CalcularPrecio() 
         {
-            precioLinea = articulo.precioActual * cantUnidades;
+            this.precioLinea = 0;
+            this.precioLinea = articulo.precioActual * cantUnidades;
+            return precioLinea;
             
             
         }

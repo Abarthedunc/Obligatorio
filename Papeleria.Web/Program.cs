@@ -10,6 +10,8 @@ using Papeleria.LogicaAplicacion.InterfacesCU.Usuarios;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
 using Papeleria.LogicaAplicacion.InterfacesUC;
 using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
+using Papeleria.LogicaAplicacion.InterfacesCU.Lineas;
+using Papeleria.LogicaAplicacion.CasosDeUso.Lineas;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +42,7 @@ builder.Services.AddScoped<IArticulosOrdenadosAlfabeticamenteCU, ArticulosOrdena
 
 builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
 
+builder.Services.AddScoped<ICalcularPrecioLinea, CalcularPrecioLinea>();
 
 builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();
 builder.Services.AddScoped<IBuscarEnClientesCU, BuscarEnClientesCU>();

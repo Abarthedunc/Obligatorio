@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.IdentityModel.Tokens;
+using Papeleria.LogicaAplicacion.CasosDeUso.Lineas;
 using Papeleria.LogicaAplicacion.DTOs;
 using Papeleria.LogicaAplicacion.InterfacesCU.Articulos;
 using Papeleria.LogicaAplicacion.InterfacesCU.Clientes;
+using Papeleria.LogicaAplicacion.InterfacesCU.Lineas;
 using Papeleria.LogicaAplicacion.InterfacesCU.Pedidos;
 using Papeleria.LogicaNegocio.Entidades;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
@@ -18,6 +20,7 @@ namespace Papeleria.Web.Controllers
         private IFindByIDArticuloCU _findByIDArticuloCU;
         private IGetClientesCU _getClientesCU;
         private IFindClienteByIDCU _findClienteByID;
+        private ICalcularPrecioLinea _calcularPrecioLinea;
         //private IGetPedidosAscendentes _getPedidosAscendentes;
         
         private static PedidoDTO tempPedido;
@@ -27,7 +30,8 @@ namespace Papeleria.Web.Controllers
 
         public PedidoController(ICrearPedidoCU crearPedidoCU,
             IArticulosOrdenadosAlfabeticamenteCU articulosOrdenados, IFindByIDArticuloCU findByIDArticuloCU, 
-            IGetClientesCU getClientesCU, IFindClienteByIDCU findClienteByIDCU)
+            IGetClientesCU getClientesCU, IFindClienteByIDCU findClienteByIDCU,
+            ICalcularPrecioLinea calcularPrecioLinea)
             //IGetPedidosAscendentes getPedidosAscendentes)
         {
            
@@ -36,6 +40,7 @@ namespace Papeleria.Web.Controllers
             this._findByIDArticuloCU = findByIDArticuloCU;
             this._getClientesCU= getClientesCU;
             this._findClienteByID = findClienteByIDCU;
+            this._calcularPrecioLinea = calcularPrecioLinea;
 
             //this._getPedidosAscendentes = getPedidosAscendentes;
         }
@@ -77,7 +82,10 @@ namespace Papeleria.Web.Controllers
                 if (tempPedido != null && tempPedido._lineas.Count > 0)
                 {
                     pedidoDTO._lineas = tempPedido._lineas;
-                    
+                }
+                foreach (LineaDTO l in tempPedido._lineas)
+                {
+                    l.precioLinea = _calcularPrecioLinea.CalcularPrecioLinea(l);
                 }
                 _crearPedidoCU.CrearPedido(pedidoDTO);
                 tempPedido = null;
@@ -87,10 +95,6 @@ namespace Papeleria.Web.Controllers
             {
                 tempPedido = null;
                 ViewBag.Clientes = _getClientesCU.GetClienteDTOs();
-                if (tempPedido != null)
-                {
-                    ViewBag._tempListaLinea = tempPedido._lineas;
-                }
                 return View();
             }
         }
@@ -112,7 +116,10 @@ namespace Papeleria.Web.Controllers
                 {
                     tempPedido = new PedidoDTO { _lineas = new List<LineaDTO>()};
                 }
+                l.precioLinea = _calcularPrecioLinea.CalcularPrecioLinea(l);
+                
                 tempPedido._lineas.Add(l);
+
 
                 return RedirectToAction(nameof(Create));
 

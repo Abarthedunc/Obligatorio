@@ -18,7 +18,7 @@
                     <option value="">Selecciona un artículo</option>
                     @foreach (var articulo in ViewBag.Articulos)
                     {
-                        <option value="@articulo.id">@articulo.nombre</option>
+                        <option value="@articulo.id">@articulo.nombre - UYU @articulo.precioActual</option>
                     }
                 </select>
             </div>
