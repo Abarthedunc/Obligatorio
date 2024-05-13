@@ -30,7 +30,7 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
                 //aAgregar.cliente = null;
                 foreach(Linea l in aAgregar._lineas)
                 {
-                    this._context.Entry(l.articulo).State = EntityState.Unchanged;
+                    l.articulo = null;
                 }
                 _context.Pedidos.Add(aAgregar);
                 _context.SaveChanges();

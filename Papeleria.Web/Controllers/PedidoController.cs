@@ -36,6 +36,7 @@ namespace Papeleria.Web.Controllers
             this._findByIDArticuloCU = findByIDArticuloCU;
             this._getClientesCU= getClientesCU;
             this._findClienteByID = findClienteByIDCU;
+
             //this._getPedidosAscendentes = getPedidosAscendentes;
         }
         // GET: PedidoController

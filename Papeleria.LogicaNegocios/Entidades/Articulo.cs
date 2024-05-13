@@ -26,9 +26,8 @@ namespace Papeleria.LogicaNegocio.Entidades
         {
             _repoitorioArticulo = repositorioArticulo;
         }
-        public Articulo(int id,string nombre, string descripcion, string codProveedor, double precioActual, int stock)
+        public Articulo(string nombre, string descripcion, string codProveedor, double precioActual, int stock)
         {
-            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.codProveedor = codProveedor;

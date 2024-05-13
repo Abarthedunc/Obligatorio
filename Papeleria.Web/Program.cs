@@ -39,7 +39,6 @@ builder.Services.AddScoped<ICrearArticuloCU, CrearArticuloCU>();
 builder.Services.AddScoped<IArticulosOrdenadosAlfabeticamenteCU, ArticulosOrdenadosAlfabeticamenteCU>();
 
 builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
-builder.Services.AddScoped<IGetPedidosAscendentes, GetPedidosAscendentes>();
 
 
 builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();

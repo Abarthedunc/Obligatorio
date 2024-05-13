@@ -25,12 +25,13 @@ namespace Papeleria.LogicaAplicacion.Mappers
 
 
             Direccion direccion = new Direccion(dto.cliente.calle, dto.cliente.numeroPuerta, dto.cliente.ciudad);
+
             NombreCompletoClientes nombreCompletoClientes = new NombreCompletoClientes(dto.cliente.nombre, dto.cliente.apellido);
-            Cliente cliente = ClienteDtoMapper.FromDto(dto.cliente);
-            //new Cliente(dto.cliente.razonSocial, dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
+
+            Cliente cliente = new Cliente(dto.cliente.razonSocial,dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
             return new PedidoComun(cliente, _lineas, dto.descuento, dto.diasParaLaEntrega, dto.iva);
-
-
+           
+            
         }
         public static PedidoExpress ToPedidoExpress(PedidoDTO dto)
         {
@@ -39,8 +40,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
 
             Direccion direccion = new Direccion(dto.cliente.calle, dto.cliente.numeroPuerta, dto.cliente.ciudad);
             NombreCompletoClientes nombreCompletoClientes = new NombreCompletoClientes(dto.cliente.nombre, dto.cliente.apellido);
-            Cliente cliente = ClienteDtoMapper.FromDto(dto.cliente);
-                //new Cliente(dto.cliente.razonSocial, dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
+            Cliente cliente = new Cliente(dto.cliente.razonSocial, dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
             return new PedidoExpress(cliente, _lineas, dto.descuento, dto.diasParaLaEntrega, dto.iva);
         }
     }

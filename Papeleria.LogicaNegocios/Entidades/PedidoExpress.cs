@@ -17,12 +17,7 @@ namespace Papeleria.LogicaNegocio.Entidades
 
         public override void EsValido()
         {
-            ValidarCliente();
-        }
-        public bool ValidarCliente()
-        {
-            bool encontrado = true;
-            return encontrado;
+            throw new NotImplementedException();
         }
         public override void CalcularPrecio()
         {
