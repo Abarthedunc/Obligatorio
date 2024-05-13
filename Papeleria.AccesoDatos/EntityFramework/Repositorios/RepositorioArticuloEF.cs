@@ -21,10 +21,16 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
         {
             try
             {
-                aAgregar.EsValido();
-               _context.Articulo.Add(aAgregar);
-               _context.SaveChanges();
-               return true;
+               // if (aAgregar.EsValido())
+                //{
+                    _context.Articulo.Add(aAgregar);
+                    _context.SaveChanges();
+                    return true;
+               // }
+               // else
+               // {
+                  //  return false;
+                //}
                 //sigue aunque devuelva falso
             }
             catch(ArticuloNoValidoException ex)

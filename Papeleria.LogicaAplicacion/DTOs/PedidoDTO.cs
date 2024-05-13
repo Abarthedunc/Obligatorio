@@ -13,6 +13,7 @@ namespace Papeleria.LogicaAplicacion.DTOs
         public int id { get; set; }
         public DateTime fechaPedido { get; set; }
         public ClienteDTO cliente { get; set; }
+        public int clienteId { get; set; }
         public List<LineaDTO> _lineas { get; set; }
         public double precioTotal { get; set; }
         public double iva { get; set; }
