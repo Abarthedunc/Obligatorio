@@ -125,7 +125,7 @@ namespace Papeleria.AccesoDatos.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
-                    b.Property<int>("clienteId")
+                    b.Property<int>("clienteid")
                         .HasColumnType("int");
 
                     b.Property<double>("descuento")
@@ -148,7 +148,7 @@ namespace Papeleria.AccesoDatos.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("clienteId");
+                    b.HasIndex("clienteid");
 
                     b.ToTable("Pedidos");
 
@@ -272,7 +272,7 @@ namespace Papeleria.AccesoDatos.Migrations
                 {
                     b.HasOne("Papeleria.LogicaNegocio.Entidades.Cliente", "cliente")
                         .WithMany()
-                        .HasForeignKey("clienteId")
+                        .HasForeignKey("clienteid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
