@@ -86,7 +86,10 @@ namespace Papeleria.Web.Controllers
                 foreach (LineaDTO l in tempPedido._lineas)
                 {
                     l.precioLinea = _calcularPrecioLinea.CalcularPrecioLinea(l);
+                    
                 }
+                double subTotal = tempPedido._lineas.Sum(linea => linea.precioLinea);
+                ViewBag.SubTotal = subTotal;
                 _crearPedidoCU.CrearPedido(pedidoDTO);
                 tempPedido = null;
                 return RedirectToAction(nameof(Index));

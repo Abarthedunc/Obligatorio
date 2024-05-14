@@ -17,7 +17,7 @@ namespace Papeleria.LogicaAplicacion.Mappers
         public static Linea FromDto(LineaDTO linea)
         {
             if(linea!=null)
-            {
+           {
                 ArticuloDTO art = linea.articulo;
                 Articulo nuevoArt = ArticuloDtoMapper.FromDto(art);
                 Linea nuevaLinea = new Linea(nuevoArt, linea.cantUnidades);

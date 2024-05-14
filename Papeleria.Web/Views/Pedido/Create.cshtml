@@ -11,6 +11,28 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+    <div class="form-group">
+        Articulos:
+        @if (ViewBag._tempListaLinea != null && ViewBag._tempListaLinea.Count > 0)
+        {
+            @foreach (LineaDTO linea in ViewBag._tempListaLinea)
+            {
+                <p>@linea.articulo.nombre - cantidad: @linea.cantUnidades - UYU @linea.precioLinea</p>
+
+            }
+        }
+            <p>Subtotal: @ViewBag.Subtotal</p>
+
+
+            <div>
+        <form asp-action="AgregarArticuloView">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <input type="submit" value="Agregar Articulo" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
@@ -42,26 +64,6 @@
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-    <div class="form-group">
-        Articulos:
-        @if (ViewBag._tempListaLinea != null && ViewBag._tempListaLinea.Count > 0)
-        {
-            @foreach (LineaDTO linea in ViewBag._tempListaLinea)
-            {
-                <p>@linea.articulo.nombre - cantidad: @linea.cantUnidades - UYU @linea.precioLinea</p>
-
-            }
-        }
-    </div>
-    <div>
-        <form asp-action="AgregarArticuloView">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group">
-                <input type="submit" value="Agregar Articulo" class="btn btn-primary" />
             </div>
         </form>
     </div>
