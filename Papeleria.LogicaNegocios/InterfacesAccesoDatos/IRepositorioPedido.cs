@@ -9,6 +9,6 @@ namespace Papeleria.LogicaNegocio.InterfacesAccesoDatos
 {
     public interface IRepositorioPedido : IRepositorio<Pedido>
     {
-        
+        public void AnularPedido(Pedido pedidoAnular);
     }
 }

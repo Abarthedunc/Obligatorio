@@ -28,7 +28,8 @@ namespace Papeleria.LogicaAplicacion.Mappers
 
             NombreCompletoClientes nombreCompletoClientes = new NombreCompletoClientes(dto.cliente.nombre, dto.cliente.apellido);
 
-            Cliente cliente = new Cliente(dto.cliente.razonSocial,dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
+            Cliente cliente = ClienteDtoMapper.FromDto(dto.cliente);
+            //new Cliente(dto.cliente.razonSocial, dto.cliente.rut, direccion, dto.cliente.distancia, nombreCompletoClientes);
             return new PedidoComun(cliente, _lineas, dto.descuento, dto.diasParaLaEntrega, dto.iva);
            
             

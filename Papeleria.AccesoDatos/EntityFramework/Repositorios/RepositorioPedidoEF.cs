@@ -2,6 +2,7 @@
 using Papeleria.LogicaNegocio.Entidades;
 using Papeleria.LogicaNegocio.Exceptions.PedidoComun;
 using Papeleria.LogicaNegocio.InterfacesAccesoDatos;
+using Papeleria.LogicaNegocios.Enumerados;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,6 +88,11 @@ namespace Papeleria.AccesoDatos.EntityFramework.Repositorios
             {
                 throw ex;
             }
+        }
+        public bool AnularPedido(Pedido pedidoAnular) 
+        {
+            pedidoAnular.estadoPedido = EstadoPedido.Anulado;
+            return true;
         }
     }
 }

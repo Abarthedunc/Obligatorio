@@ -41,7 +41,7 @@ builder.Services.AddScoped<ICrearArticuloCU, CrearArticuloCU>();
 builder.Services.AddScoped<IArticulosOrdenadosAlfabeticamenteCU, ArticulosOrdenadosAlfabeticamenteCU>();
 
 builder.Services.AddScoped<ICrearPedidoCU, CrearPedidoCU>();
-
+builder.Services.AddScoped<IAnularPedidoCU, AnularPedidoCU>();
 builder.Services.AddScoped<ICalcularPrecioLinea, CalcularPrecioLinea>();
 
 builder.Services.AddScoped<IClientesCuyoPedidoSupereMontoCU, ClientesCuyoPedidoSupereMontoCU>();

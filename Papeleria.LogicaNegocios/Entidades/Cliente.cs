@@ -28,9 +28,9 @@ namespace Papeleria.LogicaNegocio.Entidades
             this.distancia = distancia;
             this.nombreCompleto = nombreCompletoCli;
         }
-        public Cliente(string razonSocial, string rut, string calle,  string puerta, string ciudad, double distancia, string nombre, string apellido)
+        public Cliente(int id, string razonSocial, string rut, string calle, string puerta, string ciudad, double distancia, string nombre, string apellido)
         {
-            this.razonSocial = razonSocial;
+            this.id = id;
             this.rut = rut;
             adress = new Direccion(calle, puerta, ciudad);
             this.distancia = distancia;
